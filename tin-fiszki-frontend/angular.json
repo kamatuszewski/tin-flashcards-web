@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tin-fiszki-frontend"
+    }
+  },
+  "defaultProject": "tin-fiszki-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
