@@ -1,0 +1,8 @@
+<div class="app-nav">
+  <button *ngFor="let navElement of navElements"
+          type="button"
+          class="app-button app-nav__button"
+          (click)="redirectTo(navElement.redirectTo)">
+    {{ 'NAVIGATION.' + navElement.label | transloco }}
+  </button>
+</div>

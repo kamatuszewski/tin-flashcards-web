@@ -25,11 +25,6 @@
     visibility: visible;
   }
 
-  &__authorizations {
-    height: 70px;
-    border: 1px solid black;
-  }
-
   &__search-button {
     background-color: $app-transparent;
     width: 40px;
@@ -47,5 +42,9 @@
       transition: background-image 200ms ease;
       background-image: url("../../../../../resources/images/clear-black.svg");
     }
+  }
+
+  &__content {
+    transition: ease 500ms;
   }
 }

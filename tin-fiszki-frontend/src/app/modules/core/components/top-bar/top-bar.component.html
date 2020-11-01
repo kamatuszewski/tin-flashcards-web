@@ -1,17 +1,10 @@
 <section class="app-top-bar">
   <div class="app-top-bar__logo">logo</div>
   <div class="app-top-bar__content">
-    <ng-container *ngIf="visibilitedSearch; then search else authorizations"></ng-container>
+    <div class="app-top-bar__content-buttons" [@fadeAnimation] *ngIf="!visibilitedSearch"><app-nav></app-nav></div>
+    <div class="app-top-bar__content-search" [@fadeAnimation] *ngIf="visibilitedSearch"><app-search class="app-top-bar__search"></app-search></div>
   </div>
   <div class="app-top-bar__search-button-content">
     <button class="app-top-bar__search-button" [class.app-top-bar__search-button--active]="visibilitedSearch" (click)="changeSearchVisibility()"></button>
   </div>
 </section>
-
-<ng-template #search>
-  <app-search class="app-top-bar__search"></app-search>
-</ng-template>
-
-<ng-template #authorizations>
-  <div class="app-top-bar__authorizations">Przyciski</div>
-</ng-template>

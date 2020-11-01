@@ -1,6 +1,43 @@
+@import "src/resources/variables";
+
 .app {
   &, &__content {
     width: 100%;
     height: 100%;
+  }
+
+  &__content {
+    max-width: 1400px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+  }
+}
+
+::ng-deep {
+  .app-button {
+    background-color:$app-button-primary-color;
+    border-radius:20px;
+    border:1px solid $app-button-primary-border-color;
+    cursor:pointer;
+    color:$app-white-color;
+    font-size:17px;
+    padding:10px 20px;
+    text-shadow:0 1px 0 $app-button-primary-shadow-text-color;
+    outline: none;
+    user-select: none;
+
+    &:hover {
+      background-color:$app-button-primary-hover-color;
+    }
+
+    &:active {
+      position:relative;
+      top:1px;
+    }
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
   }
 }
