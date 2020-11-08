@@ -1,1 +1,45 @@
-<p>log-in works!</p>
+<div class="app-log-in">
+  <h2 class="app-log-in__title">Zaloguj się</h2>
+  <form [formGroup]="formGroup"
+        (ngSubmit)="submit()">
+    <app-form-field>
+      <input type="text"
+             appInput
+             placeholder=" "
+             id="appLogInLogin"
+             formControlName="login">
+      <app-label inputId="appLogInLogin">{{ 'AUTH.LOG_IN.LOGIN' | transloco }}</app-label>
+      <app-error *ngIf="login.dirty || login.touched">
+        <ng-container *ngIf="login.hasError('required')">
+          {{ 'AUTH.ERRORS.FIELD_REQUIRED' | transloco }}
+        </ng-container>
+        <ng-container *ngIf="login.hasError('minlength')">
+          {{ 'AUTH.ERRORS.LOGIN_MINLENGTH' | transloco }}
+        </ng-container>
+      </app-error>
+    </app-form-field>
+
+    <app-form-field>
+      <input type="password"
+             appInput
+             id="appLogInPassword"
+             placeholder=" "
+             formControlName="password"
+             class="app-form-field__input">
+      <app-label inputId="appLogInPassword">{{ 'AUTH.LOG_IN.PASSWORD' | transloco }}</app-label>
+      <app-error *ngIf="password.dirty || password.touched">
+        <ng-container *ngIf="password.hasError('required')">
+          {{ 'AUTH.ERRORS.FIELD_REQUIRED' | transloco }}
+        </ng-container>
+        <ng-container *ngIf="password.hasError('minlength')">
+          {{ 'AUTH.ERRORS.PASSWORD_MINLENGTH' | transloco }}
+        </ng-container>
+      </app-error>
+    </app-form-field>
+
+    <div class="app-log-in__actions">
+      <button type="submit"
+              class="app-button app-log-in__submit">{{ 'AUTH.LOG_IN.SUBMIT' | transloco }}</button>
+    </div>
+  </form>
+</div>

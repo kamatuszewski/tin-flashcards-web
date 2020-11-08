@@ -8,11 +8,11 @@ import { FadeAnimations } from '../../../share/config/animations.config';
   animations: FadeAnimations
 })
 export class TopBarComponent {
-  public visibilitedSearch: boolean = false;
+  public visibilitedSearch = false;
 
   constructor() { }
 
-  public changeSearchVisibility() {
+  public changeSearchVisibility(): void {
     this.visibilitedSearch = !this.visibilitedSearch;
   }
 }

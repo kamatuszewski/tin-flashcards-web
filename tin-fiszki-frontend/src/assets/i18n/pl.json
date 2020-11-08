@@ -3,5 +3,17 @@
   "NAVIGATION": {
     "SIGN_UP": "Zarejestruj się",
     "LOG_IN": "Zaloguj się"
+  },
+  "AUTH": {
+    "LOG_IN": {
+      "LOGIN": "Login",
+      "PASSWORD": "Hasło",
+      "SUBMIT": "Zaloguj"
+    },
+    "ERRORS": {
+      "FIELD_REQUIRED": "Pole nie może być puste",
+      "LOGIN_MINLENGTH": "Pole login jest za krótkie",
+      "PASSWORD_MINLENGTH": "Pole hasło jest za krótkie"
+    }
   }
 }
