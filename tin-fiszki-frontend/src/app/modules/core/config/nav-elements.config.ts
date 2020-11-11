@@ -17,4 +17,4 @@ export const navElementsConfig: INavElementConfig[] = [
   /**
    * for authorized
    */
-]
+];

@@ -1,0 +1,31 @@
+@import "src/resources/variables";
+
+.app-alert {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  padding: 15px;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: .5px;
+  font-weight: $app-font-weight-medium;
+  text-align: center;
+
+  &--error {
+    border-color: $app-alert-error-main-color;
+    background-color: $app-alert-error-bg-color;
+    color: $app-alert-error-main-color;
+  }
+
+  &--warn {
+    border-color: $app-alert-warn-main-color;
+    color: $app-alert-warn-main-color;
+    background-color: $app-alert-warn-bg-color;
+  }
+
+  &--success {
+    border-color: $app-alert-success-main-color;
+    color: $app-alert-success-main-color;
+    background-color: $app-alert-success-bg-color;
+  }
+}

@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth = environment.auth;
+  private auth: string = environment.auth;
 
   constructor(private http: HttpClient) {
   }
 
   public login(payload: ILoginRequest): Observable<ILoginResponse> {
-    const url = `${this.auth}/login`;
+    const url: string = `${this.auth}/login`;
     return this.http.post(url, payload);
   }
 }

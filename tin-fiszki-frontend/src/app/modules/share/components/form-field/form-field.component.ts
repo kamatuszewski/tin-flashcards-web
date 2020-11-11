@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FormFieldComponent {
   // tslint:disable-next-line:variable-name
-  private _hasError = false;
+  private _hasError: boolean = false;
   constructor() {
   }
 

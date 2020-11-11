@@ -6,15 +6,17 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule } from '@ngneat/transloco';
 import { ShareModule } from '../share/share.module';
+import { AuthContainerComponent } from './components/auth-container/auth-container.component';
+import { RemindPasswordComponent } from './components/remind-password/remind-password.component';
 
 @NgModule({
-  declarations: [SignUpComponent, LogInComponent],
+  declarations: [SignUpComponent, LogInComponent, AuthContainerComponent, RemindPasswordComponent],
   imports: [
     AuthRoutingModule,
     CommonModule,
     ReactiveFormsModule,
     TranslocoModule,
-    ShareModule
+    ShareModule,
   ]
 })
 export class AuthModule { }

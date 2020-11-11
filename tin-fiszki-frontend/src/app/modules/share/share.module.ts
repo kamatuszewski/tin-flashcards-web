@@ -4,12 +4,13 @@ import { LabelComponent } from './components/label/label.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { ErrorComponent } from './components/error/error.component';
 import { InputDirective } from './directives/input/input.directive';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
-  declarations: [FormFieldComponent, LabelComponent, ErrorComponent, InputDirective],
+  declarations: [FormFieldComponent, LabelComponent, ErrorComponent, InputDirective, AlertComponent],
   imports: [
-    CommonModule,
+    CommonModule
   ],
-  exports: [FormFieldComponent, LabelComponent, ErrorComponent, InputDirective]
+  exports: [FormFieldComponent, LabelComponent, ErrorComponent, InputDirective, AlertComponent]
 })
 export class ShareModule {}

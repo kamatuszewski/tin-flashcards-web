@@ -1,4 +1,5 @@
 @import "src/resources/variables";
+@import "src/resources/fonts/fonts";
 
 .app {
   display: flex;
@@ -9,37 +10,20 @@
   }
 
   &__content {
-    max-width: 1400px;
+    //max-width: 1400px;
+    width: 100%;
     display: block;
-    margin: auto;
-    padding: 20px;
+    flex-grow: 1;
+    flex-basis: auto;
+    //padding: 20px;
+    //margin: auto;
   }
 }
 
+@import "src/resources/blocks/merge-components";
+
 ::ng-deep {
-  .app-button {
-    background-color:$app-button-primary-color;
-    border-radius:20px;
-    border:1px solid $app-button-primary-border-color;
-    cursor:pointer;
-    color:$app-white-color;
-    font-size:17px;
-    padding:10px 20px;
-    text-shadow:0 1px 0 $app-button-primary-shadow-text-color;
-    outline: none;
-    user-select: none;
-
-    &:hover {
-      background-color:$app-button-primary-hover-color;
-    }
-
-    &:active {
-      position:relative;
-      top:1px;
-    }
-
-    &:not(:first-child) {
-      margin-left: 20px;
-    }
+  * {
+    font-family: "Roboto";
   }
 }

@@ -1,13 +1,42 @@
 $app-white-color: #fff;
+$app-white-color-hover: #e7e7e7;
 $app-black-color: #000;
 $app-transparent: transparent;
 $app-error-color: #F70000;
 
+/**
+ * FONT WEIGHT
+ */
+$app-font-weight-normal: 400;
+$app-font-weight-medium: 500;
+$app-font-weight-semibold: 600;
+$app-font-weight-bold: 700;
+$app-font-weight-extra-bold: 700;
 
 /**
  * button
  */
-$app-button-primary-color: #44c767;
-$app-button-primary-hover-color: #5cbf2a;
-$app-button-primary-border-color: #18ab29;
-$app-button-primary-shadow-text-color: #2f6627;
+$app-button-primary-color: #285fd2;
+$app-button-primary-hover-color: #437ce4;
+$app-button-primary-border-color: #10398d;
+$app-button-primary-shadow-text-color: #021647;
+
+/**
+ * ALERT
+ */
+$app-alert-error-main-color: #b50000;
+$app-alert-error-bg-color: #ffbfbf;
+
+$app-alert-warn-main-color: #9b9030;
+$app-alert-warn-bg-color: #f6ecbc;
+
+$app-alert-success-main-color: #3fb500;
+$app-alert-success-bg-color: #cef4c8;
+
+/**
+ * AUTH
+ */
+
+$app-auth-text-shadow-color: #285fd2;
+
+$app-mobile-width: 768px;
