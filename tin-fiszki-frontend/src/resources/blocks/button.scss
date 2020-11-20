@@ -2,6 +2,9 @@
 
 ::ng-deep {
   .app-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $app-button-primary-color;
     border-radius: 20px;
     border: 1px solid $app-button-primary-border-color;
@@ -14,6 +17,14 @@
     outline: none;
     user-select: none;
     transition: background-color 200ms;
+
+    &--circle {
+      border-radius: 50%;
+    }
+
+    &--small-padding {
+      padding: 5px;
+    }
 
     &:hover {
       background-color: $app-button-primary-hover-color;

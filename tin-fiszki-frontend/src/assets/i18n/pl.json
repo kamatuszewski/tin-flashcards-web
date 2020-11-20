@@ -54,6 +54,13 @@
     "ACTIONS": {
       "FINISH": "Zakończ",
       "NEXT": "Następny"
+    },
+    "FORM": {
+      "HEADER": "Nowy zestaw",
+      "title": "Tytuł",
+      "description": "Opis",
+      "ADD": "Dodaj",
+      "QUESTIONS": "Pytania"
     }
   }
 }

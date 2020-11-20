@@ -18,6 +18,7 @@ import { TextQuestionTypeComponent } from './components/question/components/text
 import { DragAndDropQuestionTypeComponent } from './components/question/components/drag-and-drop-question-type/drag-and-drop-question-type.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
+import { QuestionItemComponent } from './components/questions-form/components/question-item/question-item.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { QuestionsFormComponent } from './components/questions-form/questions-fo
     TextQuestionTypeComponent,
     DragAndDropQuestionTypeComponent,
     QuestionsFormComponent,
+    QuestionItemComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-field',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-field.component.scss']
 })
 export class FormFieldComponent {
+  @Input() public isAutoHeight = false;
   private _hasError: boolean = false;
   constructor() {
   }
