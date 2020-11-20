@@ -1,0 +1,57 @@
+@import "src/resources/variables";
+
+::ng-deep {
+  .app-question-type {
+
+    &__content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $app-answer-bg-color;
+      border-top: 1px solid $app-question-border-color;
+      border-bottom: 1px solid $app-question-border-color;
+      min-height: 100px;
+      padding: 20px;
+
+      &--selected {
+        border: 3px solid $app-question-border-color;
+        background-color: $app-answer-selected-bg-color;
+      }
+
+      &--correct {
+        background-color: $app-question-correct-answer-bg-color;
+        border-color: $app-question-correct-answer-border-color;
+      }
+
+      &--incorrect {
+        background-color: $app-question-incorrect-answer-bg-color;
+        border-color: $app-question-incorrect-answer-border-color;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__input {
+      max-width: 500px;
+      min-width: 250px;
+      width: 100%;
+    }
+
+    &__radio, &__checkbox {
+      display: none;
+    }
+
+    &__label {
+      font-size: 17px;
+      line-height: 21px;
+      text-align: center;
+      font-weight: $app-font-weight-medium;
+      color: $app-flashcards-main-f-color;
+    }
+  }
+}

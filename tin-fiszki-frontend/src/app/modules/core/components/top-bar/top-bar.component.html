@@ -1,10 +1,8 @@
 <section class="app-top-bar">
-  <div class="app-top-bar__logo">logo</div>
-  <div class="app-top-bar__content">
-    <div class="app-top-bar__content-buttons" [@fadeAnimation] *ngIf="!visibilitedSearch"><app-nav></app-nav></div>
-    <div class="app-top-bar__content-search" [@fadeAnimation] *ngIf="visibilitedSearch"><app-search class="app-top-bar__search"></app-search></div>
-  </div>
-  <div class="app-top-bar__search-button-content">
-    <button class="app-top-bar__search-button" [class.app-top-bar__search-button--active]="visibilitedSearch" (click)="changeSearchVisibility()"></button>
+  <div class="app-wrapper app-top-bar__wrapper">
+    <div class="app-top-bar__logo">logo</div>
+    <div class="app-top-bar__content">
+      <app-nav></app-nav>
+    </div>
   </div>
 </section>

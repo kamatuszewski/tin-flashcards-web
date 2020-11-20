@@ -1,0 +1,50 @@
+@import "src/resources/variables";
+
+.app-question {
+  background-color: $app-question-bg-color;
+  height: 90vh;
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 50px min(100px) auto 80px;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__progress {
+    background-color: $app-question-progress-bg-color;
+    border-bottom: 1px solid $app-question-border-color;
+    height: 100%;
+  }
+
+  &__header {
+    border-bottom: 1px solid $app-question-border-color;
+    padding: 40px 20px;
+  }
+
+  &__header-text {
+    text-align: center;
+    color: $app-flashcards-main-f-color;
+    font-weight: $app-font-weight-semibold;
+    font-size: 23px;
+    line-height: 27px;
+  }
+
+  &__actions {
+    border-top: 1px solid $app-question-border-color;
+    background-color: $app-question-actions-bg-color;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__actions-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+
+  }
+}

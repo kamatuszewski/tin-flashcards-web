@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  public authorized: boolean = false;
+  public authorized: boolean = true;
   public navElements: INavElementConfig[] =
     navElementsConfig.filter((element: INavElementConfig): boolean => element.forAuthorized === this.authorized);
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   public redirectTo(path: string[]): void {
     this.router.navigate(path).then();

@@ -1,0 +1,32 @@
+@import "src/resources/variables";
+
+.app-progress {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    text-align: center;
+
+    &--good {
+      color: $app-question-correct-answer-f-color
+    }
+
+    &--wrong {
+      color: $app-question-incorrect-answer-f-color
+    }
+
+    &--summary {
+      color: $app-question-summary-answer-f-color;
+    }
+  }
+
+  &__separator {
+    margin: 0 10px;
+  }
+}

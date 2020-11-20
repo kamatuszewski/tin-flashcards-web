@@ -26,4 +26,15 @@
   * {
     font-family: "Roboto";
   }
+
+  .app-wrapper {
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 0 10px;
+  }
+
+  .clickable {
+    cursor: pointer !important;
+  }
 }

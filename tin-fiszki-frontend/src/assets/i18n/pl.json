@@ -1,8 +1,16 @@
 {
-  "COMMON": {},
+  "COMMON": {
+    "STATUS": {
+      "PUBLIC": "Publiczne",
+      "PRIVATE": "Prywatne",
+      "IN_REVIEW": "W akceptacji"
+    },
+    "SEARCH": "Szukaj"
+  },
   "NAVIGATION": {
     "SIGN_UP": "Zarejestruj się",
-    "LOG_IN": "Zaloguj się"
+    "LOG_IN": "Zaloguj się",
+    "CATEGORY_LIST": "Lista Kategorii"
   },
   "AUTH": {
     "NAVIGATION": {
@@ -39,6 +47,12 @@
       "EMAIL_MINLENGTH": "Pole email jest za krótki",
       "LOGIN_ERROR": "TODO zrobić logowanie",
       "EMAIL": "Pole email jest niepoprawne"
+    }
+  },
+  "QUESTION": {
+    "ACTIONS": {
+      "FINISH": "Zakończ",
+      "NEXT": "Następny"
     }
   }
 }

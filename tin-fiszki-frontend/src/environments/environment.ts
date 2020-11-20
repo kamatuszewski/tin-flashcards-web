@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  auth: 'localhost'
+  auth: 'localhost/auth',
+  flashcards: 'localhost/flashcards',
 };
 
 /*

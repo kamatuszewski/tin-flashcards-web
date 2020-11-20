@@ -40,3 +40,43 @@ $app-alert-success-bg-color: #cef4c8;
 $app-auth-text-shadow-color: #285fd2;
 
 $app-mobile-width: 768px;
+
+/**
+ * STATUS
+ */
+
+$app-status-private: #ff8f22;
+$app-status-public: #14870c;
+$app-status-in-review: #1e0bff;
+$app-status-f-color: #fff;
+
+/**
+ * LIST ITEM
+ */
+
+$app-list-item-f-color: #000;
+$app-list-item-f-shadow-color: #000;
+$app-list-item-shadow-box-color: #9d9d9d;
+$app-list-item-shadow-box-hover-color: #838383;
+
+/**
+ * QUESTION
+ */
+
+$app-question-progress-bg-color: #f7f8fa;
+$app-question-actions-bg-color: #f7f8fa;
+$app-question-bg-color: #fdfdfd;
+$app-question-border-color: #e3e9fa;
+$app-answer-bg-color: #fff;
+$app-answer-selected-bg-color: rgba(247, 248, 250, 0.62);
+
+$app-flashcards-main-f-color: #707070;
+
+$app-question-correct-answer-bg-color: rgba(174, 226, 145, 0.8);
+$app-question-correct-answer-border-color: #3fb500;
+$app-question-correct-answer-f-color: #3fb500;
+
+$app-question-incorrect-answer-bg-color: #f8adad;
+$app-question-incorrect-answer-border-color: #b50000;
+$app-question-incorrect-answer-f-color: #b50000;
+$app-question-summary-answer-f-color: #285fd2;
