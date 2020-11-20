@@ -10,13 +10,11 @@
   }
 
   &__content {
-    //max-width: 1400px;
     width: 100%;
     display: block;
     flex-grow: 1;
     flex-basis: auto;
-    //padding: 20px;
-    //margin: auto;
+    background-color: $app-global-bg-color;
   }
 }
 

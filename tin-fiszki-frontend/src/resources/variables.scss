@@ -5,6 +5,15 @@ $app-transparent: transparent;
 $app-error-color: #F70000;
 
 /**
+ * GLOBAL
+ */
+
+$app-global-f-color: #707070;
+$app-global-f-hover-color: rgb(83, 82, 82);
+$app-global-shadow-box-color: #9d9d9d;
+$app-global-bg-color: #fdfdfd;
+
+/**
  * FONT WEIGHT
  */
 $app-font-weight-normal: 400;
@@ -12,6 +21,13 @@ $app-font-weight-medium: 500;
 $app-font-weight-semibold: 600;
 $app-font-weight-bold: 700;
 $app-font-weight-extra-bold: 700;
+
+/**
+ * MENU
+ */
+
+$app-menu-switch: $app-global-f-color;
+$app-menu-switch-border: $app-global-f-color;
 
 /**
  * button
@@ -56,7 +72,7 @@ $app-status-f-color: #fff;
 
 $app-list-item-f-color: #000;
 $app-list-item-f-shadow-color: #000;
-$app-list-item-shadow-box-color: #9d9d9d;
+$app-list-item-shadow-box-color: $app-global-shadow-box-color;
 $app-list-item-shadow-box-hover-color: #838383;
 
 /**

@@ -12,15 +12,13 @@ export const navElementsConfig: INavElementConfig[] = [
     label: 'SIGN_UP',
     redirectTo: ['auth', 'sign-up'],
     forAuthorized: false,
-  },
+  }, {
+    label: 'CATEGORY_LIST',
+    redirectTo: ['flashcards'],
+    forAuthorized: false
+  }
 
   /**
    * for authorized
    */
-
-  {
-    label: 'CATEGORY_LIST',
-    redirectTo: ['flashcards'],
-    forAuthorized: true
-  }
 ];

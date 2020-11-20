@@ -9,13 +9,12 @@
       justify-content: center;
       align-items: center;
       background-color: $app-answer-bg-color;
-      border-top: 1px solid $app-question-border-color;
-      border-bottom: 1px solid $app-question-border-color;
+      border: 1px solid $app-question-border-color;
       min-height: 100px;
       padding: 20px;
 
       &--selected {
-        border: 3px solid $app-question-border-color;
+        border-width: 3px;
         background-color: $app-answer-selected-bg-color;
       }
 

@@ -4,22 +4,19 @@
   .app-input {
     width: 100%;
     max-width: 500px;
-    &[type="text"] {
-      height: 51px;
-      margin-bottom: 20px;
-    }
+    height: 51px;
+    margin-bottom: 20px;
 
     &__content {
       $parent: &;
       position: relative;
       width: 100%;
-      &[type="text"] {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-top: 6px;
-        display: flex;
-        flex-direction: column-reverse;
-      }
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 6px;
+      display: flex;
+      flex-direction: column-reverse;
+
 
       &--error * {
         color: $app-error-color;
