@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IAnswer } from '../../../../interfaces/answer.interface';
 import { FormBuilder } from '@angular/forms';
-import { QuestionType } from '../../../classes/question-type.class';
 import { FlashcardsService } from '../../../../flashcards.service';
+import { IAnswer } from '../../../../interfaces/answer.interface';
+import { QuestionType } from '../../../classes/question-type.class';
 
 @Component({
   selector: 'app-drag-and-drop-question-type',

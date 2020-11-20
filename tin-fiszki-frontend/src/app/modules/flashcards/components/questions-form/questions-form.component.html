@@ -1,0 +1,25 @@
+<div class="app-questions-form">
+  <div class="app-questions-form__wrapper app-wrapper">
+    <form (ngSubmit)="create()"
+          [formGroup]="formGroup"
+          class="app-questions-form__content">
+      <app-form-field>
+        <input appInput
+               formControlName="title"
+               id="title"
+               type="text"
+               placeholder=" "
+               class="app-questions-form__field">
+        <app-label [inputId]="'title'">Tytuł</app-label>
+      </app-form-field>
+
+      <app-form-field>
+        <textarea appInput
+                  formControlName="description"
+                  id="description"
+                  placeholder="Opisdsadsadasdsad"
+                  class="app-questions-form__field"></textarea>
+      </app-form-field>
+    </form>
+  </div>
+</div>

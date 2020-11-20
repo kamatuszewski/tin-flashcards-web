@@ -17,6 +17,7 @@ import { RadioQuestionTypeComponent } from './components/question/components/rad
 import { TextQuestionTypeComponent } from './components/question/components/text-question-type/text-question-type.component';
 import { DragAndDropQuestionTypeComponent } from './components/question/components/drag-and-drop-question-type/drag-and-drop-question-type.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RadioQuestionTypeComponent,
     TextQuestionTypeComponent,
     DragAndDropQuestionTypeComponent,
+    QuestionsFormComponent,
   ],
   imports: [
     CommonModule,

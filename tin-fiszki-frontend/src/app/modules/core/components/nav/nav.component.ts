@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { navElementsConfig } from '../../config/nav-elements.config';
 import { INavElementConfig } from '../../interfaces/nav-element-config.interface';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',

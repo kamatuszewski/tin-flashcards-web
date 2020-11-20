@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IAuthContent } from '../../interfaces/auth-content.interface';
-import { remindPasswordContent } from '../../config/auth.config';
 import { Router } from '@angular/router';
+import { remindPasswordContent } from '../../config/auth.config';
+import { IAuthContent } from '../../interfaces/auth-content.interface';
 
 @Component({
   selector: 'app-remind-password',
@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./remind-password.component.scss']
 })
 export class RemindPasswordComponent implements OnInit {
+
+  public get email(): AbstractControl | undefined {
+    return this.formGroup.get('email');
+  }
   public formGroup: FormGroup;
   public remindPasswordContent: IAuthContent = remindPasswordContent;
 
@@ -19,17 +23,13 @@ export class RemindPasswordComponent implements OnInit {
     this.initForm();
   }
 
-  private initForm(): void {
-    this.formGroup = this.formBuilder.group({
-      email: this.formBuilder.control(null, [Validators.required, Validators.minLength(3), Validators.email])
-    });
-  }
-
   public redirectTo(path: string[]): void {
     this.router.navigate(path).then();
   }
 
-  public get email(): AbstractControl | undefined {
-    return this.formGroup.get('email');
+  private initForm(): void {
+    this.formGroup = this.formBuilder.group({
+      email: this.formBuilder.control(null, [Validators.required, Validators.minLength(3), Validators.email])
+    });
   }
 }

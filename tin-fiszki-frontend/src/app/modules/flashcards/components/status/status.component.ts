@@ -16,11 +16,11 @@ export class StatusComponent {
     return this.data === EStatus.IN_REVIEW;
   }
 
-  public isPublic = (): boolean => {
-    return this.data === EStatus.PUBLIC;
-  }
-
   public isPrivate = (): boolean => {
     return this.data === EStatus.PRIVATE;
+  }
+
+  public isPublic = (): boolean => {
+    return this.data === EStatus.PUBLIC;
   }
 }

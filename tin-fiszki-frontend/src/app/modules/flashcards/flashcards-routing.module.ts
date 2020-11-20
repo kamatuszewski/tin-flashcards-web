@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { QuestionComponent } from './components/question/question.component';
+import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: ':category/:question',
     component: QuestionComponent
+  },
+  {
+    path: 'questions/form/create',
+    component: QuestionsFormComponent
   }
 ];
 

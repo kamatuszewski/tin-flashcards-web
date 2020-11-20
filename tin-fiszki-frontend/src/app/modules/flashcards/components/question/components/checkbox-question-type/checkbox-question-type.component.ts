@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { QuestionType } from '../../../classes/question-type.class';
 import { FlashcardsService } from '../../../../flashcards.service';
 import { IAnswer } from '../../../../interfaces/answer.interface';
+import { QuestionType } from '../../../classes/question-type.class';
 
 @Component({
   selector: 'app-checkbox-question-type',
@@ -16,7 +16,13 @@ export class CheckboxQuestionTypeComponent extends QuestionType implements OnIni
     super(formBuilder, flashcards);
   }
 
-  ngOnInit(): void {
+  public changeValue(answerId: number, checked: boolean): void {
+    if (checked) {
+      this.selected.push(answerId.toString());
+    } else {
+      this.selected = this.selected.filter((value: string): boolean => value !== answerId.toString());
+    }
+    this.checkAnswerCorrect();
   }
 
   public checkCorrect(value?: string): boolean {
@@ -33,13 +39,7 @@ export class CheckboxQuestionTypeComponent extends QuestionType implements OnIni
     return this.selected.includes(id.toString());
   }
 
-  public changeValue(answerId: number, checked: boolean): void {
-    if (checked) {
-      this.selected.push(answerId.toString());
-    } else {
-      this.selected = this.selected.filter((value: string): boolean => value !== answerId.toString());
-    }
-    this.checkAnswerCorrect();
+  public ngOnInit(): void {
   }
 
   private checkAnswerCorrect(): void {

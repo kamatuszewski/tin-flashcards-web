@@ -10,7 +10,8 @@
   "NAVIGATION": {
     "SIGN_UP": "Zarejestruj się",
     "LOG_IN": "Zaloguj się",
-    "CATEGORY_LIST": "Lista Kategorii"
+    "CATEGORY_LIST": "Lista Kategorii",
+    "CREATE_QUESTIONS": "Dodaj zestaw"
   },
   "AUTH": {
     "NAVIGATION": {

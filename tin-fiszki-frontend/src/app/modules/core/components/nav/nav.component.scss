@@ -125,6 +125,10 @@
       transition: height 200ms ease-out;
     }
 
+    &__navigation-button {
+      font-size: 17px;
+    }
+
     &__navigation-item, &__navigation-item:last-child {
       padding: 10px;
     }
@@ -136,6 +140,12 @@
         border-bottom: 1px solid $app-menu-switch-border;
         position: relative;
       }
+    }
+  }
+
+  @media (max-width: $app-small-mobile-width) {
+    &__navigation-button {
+      font-size: 15px;
     }
   }
 }

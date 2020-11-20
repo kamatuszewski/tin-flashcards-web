@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICategoryBasic } from '../../interfaces/category-basic.interface';
-import { IInlineStyle } from '../../../share/interfaces/inline-style.interface';
 
 @Component({
   selector: 'app-list-item',

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IAlert } from '../../interfaces/alert.interface';
 import { EAlert } from '../../enums/alert.enum';
+import { IAlert } from '../../interfaces/alert.interface';
 
 @Component({
   selector: 'app-alert',
@@ -16,11 +16,11 @@ export class AlertComponent {
     return this.status.type === EAlert.ERROR;
   }
 
-  public isWarn = (): boolean => {
-    return this.status.type === EAlert.WARN;
-  }
-
   public isSuccess = (): boolean => {
     return this.status.type === EAlert.SUCCESS;
+  }
+
+  public isWarn = (): boolean => {
+    return this.status.type === EAlert.WARN;
   }
 }

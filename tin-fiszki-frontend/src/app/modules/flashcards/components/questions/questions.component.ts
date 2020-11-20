@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICategoryBasic } from '../../interfaces/category-basic.interface';
 import { questionsMock } from '../../mocks/questions.mock';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -10,12 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
   public questions: ICategoryBasic[] = questionsMock;
+
   private categoryId: number;
+
   constructor(private router: Router, activatedRoute: ActivatedRoute) {
     this.categoryId = +activatedRoute.snapshot.paramMap.get('category');
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
   public selectQuestion(item: number): void {

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-field.component.scss']
 })
 export class FormFieldComponent {
-  // tslint:disable-next-line:variable-name
   private _hasError: boolean = false;
   constructor() {
   }

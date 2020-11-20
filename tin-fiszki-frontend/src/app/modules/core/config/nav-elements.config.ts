@@ -16,9 +16,15 @@ export const navElementsConfig: INavElementConfig[] = [
     label: 'CATEGORY_LIST',
     redirectTo: ['flashcards'],
     forAuthorized: false
-  }
+  },
 
   /**
    * for authorized
    */
+
+  {
+    label: 'CREATE_QUESTIONS',
+    redirectTo: ['flashcards', 'questions', 'form', 'create'],
+    forAuthorized: false
+  }
 ];

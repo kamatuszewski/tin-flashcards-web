@@ -9,12 +9,12 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @Output() public search: EventEmitter<string> = new EventEmitter<string>();
   public formGroup: FormGroup;
+  @Output() public search: EventEmitter<string> = new EventEmitter<string>();
   public searchSubject$: Subject<string> = new Subject<string>();
 
-  private onDestroy$: Subject<void> = new Subject<void>();
   private debounceTime: number = 700;
+  private onDestroy$: Subject<void> = new Subject<void>();
 
   constructor(private formBuilder: FormBuilder) {
     this.searchSubject$.pipe(
@@ -26,7 +26,11 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
+  public changeSearch = (): void => {
+    this.searchSubject$.next(this.formGroup.get('search').value);
+  }
+
+  public ngOnInit(): void {
     this.initForm();
   }
 
@@ -34,9 +38,5 @@ export class SearchComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       search: this.formBuilder.control(null)
     });
-  }
-
-  public changeSearch = (): void => {
-    this.searchSubject$.next(this.formGroup.get('search').value);
   }
 }

@@ -10,23 +10,33 @@
     justify-content: center;
   }
 
-  &__text {
+  &__section {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__section-text {
     text-align: center;
+    font-size: 17px;
+    font-weight: $app-font-weight-semibold;
+    padding-left: 5px;
 
     &--good {
-      color: $app-question-correct-answer-f-color
+      color: $app-question-correct-answer-f-color;
     }
 
     &--wrong {
-      color: $app-question-incorrect-answer-f-color
+      color: $app-question-incorrect-answer-f-color;
     }
 
     &--summary {
       color: $app-question-summary-answer-f-color;
     }
-  }
-
-  &__separator {
-    margin: 0 10px;
   }
 }

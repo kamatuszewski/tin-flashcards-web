@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICategoryBasic } from '../../interfaces/category-basic.interface';
 import { categoriesMock } from '../../mocks/category.mock';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',

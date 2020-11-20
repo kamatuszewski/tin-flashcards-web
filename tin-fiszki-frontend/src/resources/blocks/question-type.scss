@@ -39,6 +39,10 @@
       max-width: 500px;
       min-width: 250px;
       width: 100%;
+      @media (max-width: $app-small-mobile-width) {
+        max-width: none;
+        min-width: auto;
+      }
     }
 
     &__radio, &__checkbox {

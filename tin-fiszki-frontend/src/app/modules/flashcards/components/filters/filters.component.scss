@@ -1,3 +1,5 @@
+@import "src/resources/variables";
+
 .app-filters {
   display: flex;
   justify-content: center;
@@ -5,5 +7,9 @@
 
   &__search {
     min-width: 350px;
+
+    @media (max-width: $app-small-mobile-width) {
+      min-width: 250px;
+    }
   }
 }
