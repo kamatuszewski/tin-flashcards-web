@@ -1,0 +1,66 @@
+{
+  "COMMON": {
+    "STATUS": {
+      "PUBLIC": "Publiczne",
+      "PRIVATE": "Prywatne",
+      "IN_REVIEW": "W akceptacji"
+    },
+    "SEARCH": "Szukaj"
+  },
+  "NAVIGATION": {
+    "SIGN_UP": "Zarejestruj się",
+    "LOG_IN": "Zaloguj się",
+    "CATEGORY_LIST": "Lista Kategorii",
+    "CREATE_QUESTIONS": "Dodaj zestaw"
+  },
+  "AUTH": {
+    "NAVIGATION": {
+      "SIGN_UP": "Zarejestruj się",
+      "LOG_IN": "Zaloguj się",
+      "REMIND_PASSWORD": "Przypomnij hasło"
+    },
+    "LOG_IN": {
+      "HEADER": "Zaloguj się",
+      "LOGIN": "Login",
+      "DESCRIPTION": "Zaloguj się do aplikacji by móc tworzyć własne zestawy pytań, a także by monitorować swój postęp w nauce.",
+      "PASSWORD": "Hasło",
+      "SUBMIT": "Zaloguj"
+    },
+    "SIGN_UP": {
+      "HEADER": "Zarejestruj się",
+      "DESCRIPTION": "Zarejestruj się do aplikacji by móc tworzyć własne zestawy pytań, a także by monitorować swój postęp w nauce.",
+      "LOGIN": "Login",
+      "PASSWORD": "Hasło",
+      "REPEAT_PASSWORD": "Powtórz hasło",
+      "EMAIL": "Email",
+      "SUBMIT": "Zarejestruj"
+    },
+    "REMIND_PASSWORD": {
+      "HEADER": "Przypomnij hasło",
+      "DESCRIPTION": "Podaj swój email do aplikacji. Na podany email dostaniesz nowe hasło.",
+      "EMAIL": "Twój email",
+      "SUBMIT": "Przypomnij"
+    },
+    "ERRORS": {
+      "FIELD_REQUIRED": "Pole nie może być puste",
+      "LOGIN_MINLENGTH": "Pole login jest za krótkie",
+      "PASSWORD_MINLENGTH": "Pole hasło jest za krótkie",
+      "EMAIL_MINLENGTH": "Pole email jest za krótki",
+      "LOGIN_ERROR": "TODO zrobić logowanie",
+      "EMAIL": "Pole email jest niepoprawne"
+    }
+  },
+  "QUESTION": {
+    "ACTIONS": {
+      "FINISH": "Zakończ",
+      "NEXT": "Następny"
+    },
+    "FORM": {
+      "HEADER": "Nowy zestaw",
+      "title": "Tytuł",
+      "description": "Opis",
+      "ADD": "Dodaj",
+      "QUESTIONS": "Pytania"
+    }
+  }
+}

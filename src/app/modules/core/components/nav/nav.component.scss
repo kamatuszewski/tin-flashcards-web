@@ -1,0 +1,151 @@
+@import "src/resources/variables";
+
+.app-nav {
+  display: flex;
+  justify-content: flex-end;
+  $parent: &;
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    outline: none;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    outline: none;
+    z-index: 998;
+  }
+
+  &__navigation-item {
+    padding: 0 10px;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__navigation-button {
+    padding: 10px 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: $app-font-weight-medium;
+    color: $app-global-f-color;
+    transition: text-shadow 700ms, color 500ms;
+
+    &:hover {
+      color: $app-global-f-hover-color;
+      text-shadow: 0 0 20px $app-button-primary-hover-color;
+    }
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+  }
+
+  &__switch-field {
+    display: none;
+  }
+
+  &__switch, &__switch-button {
+    display: none;
+  }
+
+  &__switch-button-element {
+    width: 30px;
+    height: 4px;
+    background-color: $app-menu-switch;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px $app-global-shadow-box-color;
+    transition: all .5s ease-in-out;
+  }
+
+  &__switch-button {
+    z-index: 5;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+  }
+
+  &__content:active, &__content:focus {
+    #{$parent}__switch-button-element--middle {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    #{$parent}__switch-button-element {
+      &:first-child {
+        transform: rotate(45deg) translate(7px, 8px);
+      }
+      &:last-child {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__switch, &__switch-button {
+      display: flex;
+    }
+
+    &__content:not(:active), &__content:not(:focus) {
+      #{$parent} > #{$parent}__navigation {
+        display: none;
+      }
+    }
+
+    &__content:active, &__content:focus {
+      #{$parent}__navigation {
+        height: auto;
+        box-shadow: 0 3px 10px $app-global-shadow-box-color;
+      }
+    }
+
+    &__navigation {
+      position: absolute;
+      min-width: 300px;
+      height: 0;
+      overflow: hidden;
+      background-color: white;
+      top: 100%;
+      right: 0;
+      flex-direction: column;
+      align-items: center;
+      transition: height 200ms ease-out;
+    }
+
+    &__navigation-button {
+      font-size: 17px;
+    }
+
+    &__navigation-item, &__navigation-item:last-child {
+      padding: 10px;
+    }
+
+    &__navigation-item {
+      width: 100%;
+      text-align: center;
+      &:not(:last-child) {
+        border-bottom: 1px solid $app-menu-switch-border;
+        position: relative;
+      }
+    }
+  }
+
+  @media (max-width: $app-small-mobile-width) {
+    &__navigation-button {
+      font-size: 15px;
+    }
+  }
+}

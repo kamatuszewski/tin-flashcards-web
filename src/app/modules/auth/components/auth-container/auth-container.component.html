@@ -1,0 +1,23 @@
+<div class="app-auth-container">
+  <div class="app-auth-container__presentation">
+    <div class="app-auth-container__presentation-main">
+      <div class="app-auth-container__img-content">
+        <img class="app-auth-container__img"
+             [src]="data.pathIcon">
+      </div>
+      <h2 class="app-auth-container__head">{{ data.header | transloco }}</h2>
+      <p *ngIf="data.description" class="app-auth-container__description">{{ data.description | transloco }}</p>
+    </div>
+    <div *ngIf="!!data.actions?.length"
+         class="app-auth-container__presentation-actions">
+      <a *ngFor="let action of data.actions"
+         (click)="makeAction(action.path)"
+         class="app-auth-container__presentation-action">
+        {{ action.label | transloco }}
+      </a>
+    </div>
+  </div>
+  <div class="app-auth-container__form-content">
+    <ng-content></ng-content>
+  </div>
+</div>

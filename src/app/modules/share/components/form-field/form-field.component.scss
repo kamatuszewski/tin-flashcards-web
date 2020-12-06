@@ -1,0 +1,82 @@
+@import "src/resources/variables";
+
+::ng-deep {
+  .app-input {
+    width: 100%;
+    max-width: 500px;
+    height: 51px;
+    margin-bottom: 20px;
+
+    &--auto-height {
+      height: auto;
+    }
+
+    &__content {
+      $parent: &;
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      padding-top: 6px;
+      display: flex;
+      flex-direction: column-reverse;
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 17px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: $app-border-color;
+        z-index: 4;
+        &, &:focus {
+          outline: none;
+        }
+      }
+
+      &--error * {
+        color: $app-error-color;
+      }
+
+      &--error input, &--error textarea {
+        &, &:focus, &:active {
+          border-color: $app-error-color;
+        }
+      }
+
+      textarea {
+        resize: none;
+        min-height: 100px;
+      }
+
+      app-label {
+        margin-left: 7px;
+        font-size: 17px;
+        position: absolute;
+        top: 18px;
+        transition: top 200ms ease-out, font-size 200ms ease-out, letter-spacing 200ms ease-out;
+        background-color: $app-white-color;
+        padding: 0 5px;
+        z-index: 5;
+      }
+
+      ::-webkit-input-placeholder {
+        opacity: 0;
+        transition: inherit;
+      }
+
+      input:focus + app-label, input:not(:placeholder-shown) + app-label, textarea:focus + app-label, textarea:not(:placeholder-shown) + app-label {
+        transition: top 200ms ease-in, font-size 200ms ease-in, letter-spacing 200ms ease-in;
+        top: 0;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      app-error {
+        position: absolute;
+        top: 100%;
+      }
+    }
+  }
+}

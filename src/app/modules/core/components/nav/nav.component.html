@@ -1,0 +1,18 @@
+<div class="app-nav">
+  <div class="app-nav__content" tabindex="-1">
+    <ul class="app-nav__navigation">
+      <li *ngFor="let navElement of navElements"
+          class="app-nav__navigation-item">
+        <div (click)="redirectTo(navElement.redirectTo)"
+             class="app-nav__navigation-button clickable">{{ 'NAVIGATION.' + navElement.label | transloco }}</div>
+      </li>
+    </ul>
+    <div class="app-nav__switch">
+      <div class="app-nav__switch-button">
+        <div class="app-nav__switch-button-element"></div>
+        <div class="app-nav__switch-button-element app-nav__switch-button-element--middle"></div>
+        <div class="app-nav__switch-button-element"></div>
+      </div>
+    </div>
+  </div>
+</div>

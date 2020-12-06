@@ -1,0 +1,40 @@
+<div class="app-question" *ngIf="!!questionMock">
+  <div class="app-question__wrapper">
+    <div class="app-question__progress">
+      <app-progress></app-progress>
+    </div>
+    <div class="app-question__header">
+      <div class="app-wrapper">
+        <h3 class="app-question__header-text">{{ questionMock.title }}</h3>
+      </div>
+    </div>
+    <div class="app-question__content">
+      <div class="app-wrapper">
+        <ng-container [ngSwitch]="questionMock.type">
+          <app-checkbox-question-type *ngSwitchCase="EQuestionType.CHECKBOX"
+                                      (isCorrect)="setAnswer($event)"
+                                      [answers]="questionMock.answers"></app-checkbox-question-type>
+          <app-radio-question-type *ngSwitchCase="EQuestionType.RADIO"
+                                   (isCorrect)="setAnswer($event)"
+                                   [answers]="questionMock.answers"></app-radio-question-type>
+          <app-text-question-type *ngSwitchCase="EQuestionType.TEXT"
+                                  (isCorrect)="setAnswer($event)"
+                                  [answers]="questionMock.answers"></app-text-question-type>
+          <app-drag-and-drop-question-type *ngSwitchCase="EQuestionType.DRAG_AND_DROP"
+                                           (isCorrect)="setAnswer($event)"
+                                           [answers]="questionMock.answers"></app-drag-and-drop-question-type>
+        </ng-container>
+      </div>
+    </div>
+    <div class="app-question__actions">
+      <div class="app-wrapper app-question__actions-content">
+        <button type="button"
+                class="app-button app-log-in__button">{{ 'QUESTION.ACTIONS.FINISH' | transloco }}</button>
+        <button type="submit"
+                (click)="checkAnswers()"
+                [disabled]="blockedButton"
+                class="app-button app-log-in__button">{{ 'QUESTION.ACTIONS.NEXT' | transloco }}</button>
+      </div>
+    </div>
+  </div>
+</div>

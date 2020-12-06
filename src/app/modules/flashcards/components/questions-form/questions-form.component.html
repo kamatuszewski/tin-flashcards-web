@@ -1,0 +1,49 @@
+<div class="app-questions-form">
+  <div class="app-questions-form__wrapper app-wrapper">
+    <h3 class="app-questions-form__header">
+      {{ 'QUESTION.FORM.HEADER' | transloco }}
+    </h3>
+    <form (ngSubmit)="create()"
+          [formGroup]="formGroup"
+          class="app-questions-form__content">
+      <app-form-field class="app-questions-form__form-field">
+        <input appInput
+               formControlName="title"
+               id="title"
+               type="text"
+               placeholder=" "
+               class="app-questions-form__field">
+        <app-label [inputId]="'title'">
+          {{ 'QUESTION.FORM.TITLE' | transloco }}
+        </app-label>
+      </app-form-field>
+
+      <app-form-field [isAutoHeight]="true"
+                      class="app-questions-form__form-field">
+        <textarea appInput
+                  formControlName="description"
+                  id="description"
+                  placeholder=" "
+                  class="app-questions-form__field"></textarea>
+        <app-label [inputId]="'description'">
+          {{ 'QUESTION.FORM.DESCRIPTION' | transloco }}
+        </app-label>
+      </app-form-field>
+
+      <div class="app-questions-form__questions">
+        <div class="app-questions-form__questions-content">
+          <h4 class="app-questions-form__questions-title">{{ 'QUESTION.FORM.QUESTIONS' | transloco }}</h4>
+          <button type="button"
+                  (click)="addQuestion()"
+                  class="app-button app-button--circle app-button--small-padding">
+            <img src="assets/images/add.svg" class="app-button__icon">
+          </button>
+        </div>
+      </div>
+
+      <div [formArrayName]="'questions'">
+        <app-question-item *ngFor="let field of formArray?.controls" [parentGroup]="field"></app-question-item>
+      </div>
+    </form>
+  </div>
+</div>
