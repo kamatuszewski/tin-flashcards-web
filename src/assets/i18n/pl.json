@@ -16,15 +16,15 @@
   "AUTH": {
     "NAVIGATION": {
       "SIGN_UP": "Zarejestruj się",
-      "LOG_IN": "Zaloguj się",
-      "REMIND_PASSWORD": "Przypomnij hasło"
+      "LOG_IN": "Zaloguj się"
     },
     "LOG_IN": {
       "HEADER": "Zaloguj się",
       "LOGIN": "Login",
       "DESCRIPTION": "Zaloguj się do aplikacji by móc tworzyć własne zestawy pytań, a także by monitorować swój postęp w nauce.",
       "PASSWORD": "Hasło",
-      "SUBMIT": "Zaloguj"
+      "SUBMIT": "Zaloguj",
+      "REMIND_PASSWORD": "Przypomnij hasło"
     },
     "SIGN_UP": {
       "HEADER": "Zarejestruj się",

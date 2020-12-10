@@ -8,10 +8,6 @@ export const loginContent: IAuthContent = {
     {
       label: 'AUTH.NAVIGATION.SIGN_UP',
       path: ['auth', 'sign-up']
-    },
-    {
-      label: 'AUTH.NAVIGATION.REMIND_PASSWORD',
-      path: ['auth', 'remind-password']
     }
   ]
 };
