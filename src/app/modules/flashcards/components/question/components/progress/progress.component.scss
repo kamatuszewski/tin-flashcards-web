@@ -28,15 +28,15 @@
     padding-left: 5px;
 
     &--good {
-      color: $app-question-correct-answer-f-color;
+      color: $app-progress-good-color;
     }
 
     &--wrong {
-      color: $app-question-incorrect-answer-f-color;
+      color: $app-progress-wrong-color;
     }
 
     &--summary {
-      color: $app-question-summary-answer-f-color;
+      color: $app-progress-summary-color;
     }
   }
 }

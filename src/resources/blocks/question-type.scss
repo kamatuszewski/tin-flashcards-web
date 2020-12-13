@@ -8,24 +8,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $app-answer-bg-color;
-      border: 1px solid $app-question-border-color;
+      background-color: $app-question-type-bg-color;
+      border: 1px solid $app-question-type-b-color;
       min-height: 100px;
       padding: 20px;
 
       &--selected {
         border-width: 3px;
-        background-color: $app-answer-selected-bg-color;
+        background-color: $app-question-type-selected-bg-color;
       }
 
       &--correct {
-        background-color: $app-question-correct-answer-bg-color;
-        border-color: $app-question-correct-answer-border-color;
+        background-color: $app-question-type-correct-answer-bg-color;
+        border-color: $app-question-type-correct-answer-border-color;
       }
 
       &--incorrect {
-        background-color: $app-question-incorrect-answer-bg-color;
-        border-color: $app-question-incorrect-answer-border-color;
+        background-color: $app-question-type-incorrect-answer-bg-color;
+        border-color: $app-question-type-incorrect-answer-border-color;
       }
     }
 
@@ -54,7 +54,7 @@
       line-height: 21px;
       text-align: center;
       font-weight: $app-font-weight-medium;
-      color: $app-flashcards-main-f-color;
+      color: $app-question-type-f-color;
     }
   }
 }

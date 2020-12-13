@@ -2,7 +2,7 @@
 
 .app-top-bar {
   width: 100%;
-  box-shadow: 0 3px 6px rgba(107,107,107,.87);
+  box-shadow: 0 3px 6px $app-top-bar-shadow-color;
   position: relative;
   padding: 10px 20px;
   display: flex;
@@ -22,10 +22,10 @@
 
   &__logo {
     height: 70px;
-    border: 1px solid black;
+    border: 1px solid black; //TODO zmienić na logo
   }
 
   &__content {
-    transition: ease 500ms;
+    transition: ease $app-time-transition;
   }
 }

@@ -28,7 +28,7 @@
         border-radius: 5px;
         border-style: solid;
         border-width: 2px;
-        border-color: $app-border-color;
+        border-color: $app-form-field-b-color;
         z-index: 4;
         &, &:focus {
           outline: none;
@@ -36,12 +36,12 @@
       }
 
       &--error * {
-        color: $app-error-color;
+        color: $app-form-field-error-color;
       }
 
       &--error input, &--error textarea {
         &, &:focus, &:active {
-          border-color: $app-error-color;
+          border-color: $app-form-field-error-color;
         }
       }
 
@@ -56,7 +56,7 @@
         position: absolute;
         top: 18px;
         transition: top 200ms ease-out, font-size 200ms ease-out, letter-spacing 200ms ease-out;
-        background-color: $app-white-color;
+        background-color: $app-form-field-bg-color;
         padding: 0 5px;
         z-index: 5;
       }

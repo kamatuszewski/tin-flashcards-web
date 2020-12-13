@@ -27,8 +27,8 @@
     line-height: 35px;
     letter-spacing: 0.4px;
     font-weight: $app-font-weight-medium;
-    color: $app-global-f-color;
-    text-shadow: 1px 1px 2px $app-global-shadow-box-color;
+    color: $app-questions-form-f-color;
+    text-shadow: 1px 1px 2px $app-questions-form-shadow-color;
 
     @media (max-width: $app-small-mobile-width) {
       font-size: 20px;
@@ -47,7 +47,7 @@
       content: "";
       height: 1px;
       width: 100%;
-      background-color: $app-button-primary-color;
+      background-color: $app-questions-form-glow-color;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -60,7 +60,7 @@
     justify-content: center;
     align-items: center;
     max-width: 300px;
-    background-color: $app-global-bg-color;
+    background-color: $app-questions-form-bg-color;
     padding: 0 20px;
     z-index: 3;
     position: relative;
@@ -70,8 +70,8 @@
     font-size: 20px;
     line-height: 25px;
     text-transform: uppercase;
-    color: $app-global-f-color;
+    color: $app-questions-form-f-color;
     letter-spacing: 0.4px;
-    text-shadow: 1px 1px 2px $app-global-shadow-box-color;
+    text-shadow: 1px 1px 2px $app-questions-form-shadow-color;
   }
 }

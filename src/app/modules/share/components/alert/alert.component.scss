@@ -12,20 +12,20 @@
   text-align: center;
 
   &--error {
-    border-color: $app-alert-error-main-color;
-    background-color: $app-alert-error-bg-color;
-    color: $app-alert-error-main-color;
+    border-color: $app-status-alert-main-color;
+    background-color: $app-status-alert-secund-color;
+    color: $app-status-alert-main-color;
   }
 
   &--warn {
-    border-color: $app-alert-warn-main-color;
-    color: $app-alert-warn-main-color;
-    background-color: $app-alert-warn-bg-color;
+    border-color: $app-status-warn-main-color;
+    color: $app-status-warn-main-color;
+    background-color: $app-status-warn-secund-color;
   }
 
   &--success {
-    border-color: $app-alert-success-main-color;
-    color: $app-alert-success-main-color;
-    background-color: $app-alert-success-bg-color;
+    border-color: $app-status-success-main-color;
+    color: $app-status-success-main-color;
+    background-color: $app-status-success-secund-color;
   }
 }

@@ -34,12 +34,12 @@
     text-transform: uppercase;
     letter-spacing: 0.3px;
     font-weight: $app-font-weight-medium;
-    color: $app-global-f-color;
+    color: $app-nav-f-color;
     transition: text-shadow 700ms, color 500ms;
 
     &:hover {
-      color: $app-global-f-hover-color;
-      text-shadow: 0 0 20px $app-button-primary-hover-color;
+      color: $app-nav-f-hover-color;
+      text-shadow: 0 0 20px $app-nav-text-shadow-hover-color;
     }
   }
 
@@ -59,10 +59,10 @@
   &__switch-button-element {
     width: 30px;
     height: 4px;
-    background-color: $app-menu-switch;
+    background-color: $app-nav-switch-bg-color;
     border-radius: 5px;
-    box-shadow: 0 1px 3px $app-global-shadow-box-color;
-    transition: all .5s ease-in-out;
+    box-shadow: 0 1px 3px $app-nav-switch-shadow-color;
+    transition: all $app-time-transition;
   }
 
   &__switch-button {
@@ -75,7 +75,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
-    transition: all .5s ease-in-out;
+    transition: all $app-time-transition;
   }
 
   &__content:active, &__content:focus {
@@ -108,7 +108,7 @@
     &__content:active, &__content:focus {
       #{$parent}__navigation {
         height: auto;
-        box-shadow: 0 3px 10px $app-global-shadow-box-color;
+        box-shadow: 0 3px 10px $app-nav-switch-shadow-color;
       }
     }
 
@@ -122,7 +122,7 @@
       right: 0;
       flex-direction: column;
       align-items: center;
-      transition: height 200ms ease-out;
+      transition: height $app-time-transition;
     }
 
     &__navigation-button {
@@ -137,7 +137,7 @@
       width: 100%;
       text-align: center;
       &:not(:last-child) {
-        border-bottom: 1px solid $app-menu-switch-border;
+        border-bottom: 1px solid $app-nav-switch-b-color;
         position: relative;
       }
     }
