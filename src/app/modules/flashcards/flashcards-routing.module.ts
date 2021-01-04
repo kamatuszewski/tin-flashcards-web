@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OnlyForLoggedInGuard } from '../auth/guards/only-for-logged-in.guard';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { QuestionComponent } from './components/question/question.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'questions/form/create',
-    component: QuestionsFormComponent
+    component: QuestionsFormComponent,
+    canActivate: [OnlyForLoggedInGuard]
   }
 ];
 

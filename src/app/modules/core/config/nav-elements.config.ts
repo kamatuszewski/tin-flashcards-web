@@ -1,30 +1,40 @@
+import { ETypeVisible } from '../enums/type-visible.enum';
 import { INavElementConfig } from '../interfaces/nav-element-config.interface';
+import { ESpecialActions } from '../enums/special-actions.enum';
 
 export const navElementsConfig: INavElementConfig[] = [
   /**
    * for not authorized
    */
-  {
-    label: 'LOG_IN',
-    redirectTo: ['auth', 'log-in'],
-    forAuthorized: false,
-  }, {
-    label: 'SIGN_UP',
-    redirectTo: ['auth', 'sign-up'],
-    forAuthorized: false,
-  }, {
+  , {
     label: 'CATEGORY_LIST',
     redirectTo: ['flashcards'],
-    forAuthorized: false
+    visibleType: ETypeVisible.EVERY,
   },
-
-  /**
-   * for authorized
-   */
-
   {
     label: 'CREATE_QUESTIONS',
     redirectTo: ['flashcards', 'questions', 'form', 'create'],
-    forAuthorized: false
+    visibleType: ETypeVisible.LOGGED_IN
+  },
+
+
+
+
+  /**
+   * AUTH
+   */
+
+  {
+    label: 'LOG_IN',
+    redirectTo: ['auth', 'log-in'],
+    visibleType: ETypeVisible.NOT_LOGGED_IN,
+  }, {
+    label: 'SIGN_UP',
+    redirectTo: ['auth', 'sign-up'],
+    visibleType: ETypeVisible.NOT_LOGGED_IN,
+  }, {
+    label: 'LOG_OUT',
+    redirectTo: [ESpecialActions.LOG_OUT],
+    visibleType: ETypeVisible.LOGGED_IN,
   }
 ];

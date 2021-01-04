@@ -28,6 +28,16 @@ export class LogInComponent implements OnInit, OnDestroy {
   private static readonly loginMinLength: number = 3;
   private static readonly passwordMinLength: number = 3;
 
+  private static getErrorCodeForTranslate(errorCode: number): string {
+    const unathorized = 401;
+    const fatalError = 500;
+
+    switch (errorCode) {
+      case unathorized: return `AUTH.ERRORS.UNAUTHORIZED`;
+      case fatalError: return `AUTH.ERRORS.FATAL_ERROR`;
+    }
+  }
+
   public alert$: BehaviorSubject<IAlert | void> = new BehaviorSubject<IAlert | null>(null);
   public formGroup: FormGroup;
   public loginContent: IAuthContent = loginContent;
@@ -62,14 +72,13 @@ export class LogInComponent implements OnInit, OnDestroy {
         .subscribe(
           () => {
             this.alert$.next(null);
-            console.log('zalogowano');
+            this.router.navigate(['flashcards']).then();
           },
           (error: HttpErrorResponse) => {
             const alert: IAlert = {
               type: EAlert.ERROR,
-              text: this.translocoService.translate(`AUTH.ERRORS.LOGIN_ERROR`)
+              text: this.translocoService.translate(LogInComponent.getErrorCodeForTranslate(error.status))
             };
-            console.log('Nie zalogowano');
             this.alert$.next(alert);
           });
     }

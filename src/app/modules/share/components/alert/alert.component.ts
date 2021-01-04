@@ -8,19 +8,19 @@ import { IAlert } from '../../interfaces/alert.interface';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent {
-  @Input() public status: IAlert;
+  @Input() public status: IAlert | null;
 
   constructor() { }
 
   public isError = (): boolean => {
-    return this.status.type === EAlert.ERROR;
+    return !!this.status && this.status?.type === EAlert.ERROR;
   }
 
   public isSuccess = (): boolean => {
-    return this.status.type === EAlert.SUCCESS;
+    return !!this.status && this.status?.type === EAlert.SUCCESS;
   }
 
   public isWarn = (): boolean => {
-    return this.status.type === EAlert.WARN;
+    return !!this.status && this.status?.type === EAlert.WARN;
   }
 }

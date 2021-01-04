@@ -11,7 +11,8 @@
     "SIGN_UP": "Zarejestruj się",
     "LOG_IN": "Zaloguj się",
     "CATEGORY_LIST": "Lista Kategorii",
-    "CREATE_QUESTIONS": "Dodaj zestaw"
+    "CREATE_QUESTIONS": "Dodaj zestaw",
+    "LOG_OUT": "Wyloguj"
   },
   "AUTH": {
     "NAVIGATION": {
@@ -46,7 +47,10 @@
       "LOGIN_MINLENGTH": "Pole login jest za krótkie",
       "PASSWORD_MINLENGTH": "Pole hasło jest za krótkie",
       "EMAIL_MINLENGTH": "Pole email jest za krótki",
-      "LOGIN_ERROR": "TODO zrobić logowanie",
+      "UNAUTHORIZED": "Nie poprawne dane logowania",
+      "FATAL_ERROR": "Błąd serwera",
+      "USER_ALREADY_EXISTS": "Istnieje już użytkownik o podanym emailu lub loginie",
+      "BAD_REQUEST": "Sprawdź czy wszystkie dane zostały wypełnione poprawnie",
       "EMAIL": "Pole email jest niepoprawne"
     }
   },

@@ -1,2 +1,3 @@
-// tslint:disable-next-line:no-empty-interface
-export interface ILoginResponse {}
+export interface ILoginResponse {
+  access_token: string;
+}

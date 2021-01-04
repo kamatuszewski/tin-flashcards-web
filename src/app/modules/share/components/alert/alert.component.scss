@@ -2,8 +2,10 @@
 
 .app-alert {
   width: 100%;
+  min-height: 52px;
   border-style: solid;
   border-width: 1px;
+  border-color: transparent;
   padding: 15px;
   font-size: 15px;
   line-height: 20px;

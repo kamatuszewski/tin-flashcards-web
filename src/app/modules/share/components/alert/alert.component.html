@@ -1,4 +1,5 @@
 <div class="app-alert"
+     *ngIf="!!status?.text"
      [class.app-alert--error]="isError()"
      [class.app-alert--success]="isSuccess()"
      [class.app-alert--warn]="isWarn()">

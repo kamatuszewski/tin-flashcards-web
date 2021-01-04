@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  auth: 'http://localhost:4111/api/auth',
+  auth: 'http://localhost:7000/api/auth',
   consumers: 'http://localhost:4111/api/consumers',
   flashcards: 'http://localhost/flashcards',
+  base: 'http://localhost:7000'
 };
 
 /*

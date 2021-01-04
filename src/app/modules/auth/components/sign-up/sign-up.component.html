@@ -1,6 +1,7 @@
 <app-auth-container [data]="signupContent"
                     (redirectTo)="redirectTo($event)">
   <div class="app-sign-up">
+    <app-alert [status]="alert$ | async"></app-alert>
     <form [formGroup]="formGroup"
           (ngSubmit)="submit()"
           class="app-sign-up__form">
@@ -42,26 +43,9 @@
         <input type="text"
                appInput
                placeholder=" "
-               id="appSignUpRepeatPassword"
-               formControlName="repeatPassword">
-        <app-label inputId="appSignUpRepeatPassword">{{ 'AUTH.SIGN_UP.REPEAT_PASSWORD' | transloco }}</app-label>
-        <app-error *ngIf="repeatPassword.dirty || repeatPassword.touched">
-          <ng-container *ngIf="repeatPassword.hasError('required')">
-            {{ 'AUTH.ERRORS.FIELD_REQUIRED' | transloco }}
-          </ng-container>
-          <ng-container *ngIf="repeatPassword.hasError('minlength')">
-            {{ 'AUTH.ERRORS.PASSWORD_MINLENGTH' | transloco }}
-          </ng-container>
-        </app-error>
-      </app-form-field>
-
-      <app-form-field>
-        <input type="text"
-               appInput
-               placeholder=" "
                id="appSignUpEmail"
                formControlName="email">
-        <app-label inputId="appSignUpRepeatPassword">{{ 'AUTH.SIGN_UP.EMAIL' | transloco }}</app-label>
+        <app-label inputId="appSignUpEmailPassword">{{ 'AUTH.SIGN_UP.EMAIL' | transloco }}</app-label>
         <app-error *ngIf="email.dirty || email.touched">
           <ng-container *ngIf="email.hasError('required')">
             {{ 'AUTH.ERRORS.FIELD_REQUIRED' | transloco }}

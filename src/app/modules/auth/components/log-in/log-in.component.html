@@ -1,6 +1,7 @@
 <app-auth-container [data]="loginContent"
                     (redirectTo)="redirectTo($event)">
   <div class="app-log-in">
+    <app-alert [status]="alert$ | async"></app-alert>
     <form [formGroup]="formGroup"
           (ngSubmit)="submit()"
           class="app-log-in__form">

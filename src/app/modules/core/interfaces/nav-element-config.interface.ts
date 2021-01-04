@@ -1,5 +1,7 @@
+import { ETypeVisible } from '../enums/type-visible.enum';
+
 export interface INavElementConfig {
   label: string;
-  redirectTo: string[];
-  forAuthorized: boolean
+  redirectTo?: string[];
+  visibleType: ETypeVisible;
 }
