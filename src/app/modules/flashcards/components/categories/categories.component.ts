@@ -17,7 +17,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   public selectCategory = (item: number): void => {
-    console.log(item)
     this.router.navigate(['flashcards', item]).then();
   }
 }

@@ -7,6 +7,7 @@ import { QuestionComponent } from './components/question/question.component';
 import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { CategoriesResolve } from './resolvers/categories.resolve';
+import { QuestionsResolve } from './resolvers/questions.resolve';
 
 const routes: Routes = [
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
   {
     path: ':category',
     component: QuestionsComponent,
+    resolve: {
+      Questions: QuestionsResolve
+    }
   },
   {
     path: ':category/:question',

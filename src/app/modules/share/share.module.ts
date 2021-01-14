@@ -31,7 +31,8 @@ import { SelectComponent } from './components/select/select.component';
     ErrorComponent,
     InputDirective,
     AlertComponent,
-    SearchComponent
+    SearchComponent,
+    SelectComponent
   ]
 })
 export class ShareModule {}

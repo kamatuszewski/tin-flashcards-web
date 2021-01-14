@@ -46,6 +46,6 @@ import { FlashcardsRoutingModule } from './flashcards-routing.module';
     TranslocoModule,
     ShareModule,
     ReactiveFormsModule
-  ]
+  ],
 })
 export class FlashcardsModule { }
