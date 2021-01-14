@@ -14,6 +14,6 @@ export class ListItemComponent {
   }
 
   public select = (): void => {
-    this.getSelected.emit(this.data.id);
+    this.getSelected.emit(this.data.id_category);
   }
 }

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   auth: 'http://localhost:7000/api/auth',
   consumers: 'http://localhost:4111/api/consumers',
-  flashcards: 'http://localhost/flashcards',
+  flashcards: 'http://localhost:7000/api/flashcards',
   base: 'http://localhost:7000'
 };
 

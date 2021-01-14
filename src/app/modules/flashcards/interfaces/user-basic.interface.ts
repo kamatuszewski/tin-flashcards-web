@@ -1,4 +1,4 @@
 export interface IUserBasic {
-  id: number;
+  id_user: number;
   login: string;
 }

@@ -9,7 +9,7 @@ export const categoriesMock: ICategoryBasic[] = [
       login: 'login_1'
     },
     title: 'Kategoria 1',
-    created_date: 'asdsadasdasd',
+    createdDate: 'asdsadasdasd',
     status: EStatus.PRIVATE
   },
   {
@@ -19,7 +19,7 @@ export const categoriesMock: ICategoryBasic[] = [
       login: 'login_2'
     },
     title: 'Kategoria 2',
-    created_date: 'asdsadasdasd',
+    createdDate: 'asdsadasdasd',
     status: EStatus.PUBLIC
   },
   {
@@ -29,7 +29,7 @@ export const categoriesMock: ICategoryBasic[] = [
       login: 'login_3'
     },
     title: 'Kategoria 3',
-    created_date: 'asdsadasdasd',
+    createdDate: 'asdsadasdasd',
     status: EStatus.IN_REVIEW
   },
   {
@@ -39,7 +39,7 @@ export const categoriesMock: ICategoryBasic[] = [
       login: 'login_4'
     },
     title: 'Kategoria 4',
-    created_date: 'asdsadasdasd',
+    createdDate: 'asdsadasdasd',
     status: EStatus.PUBLIC
   }
 ];

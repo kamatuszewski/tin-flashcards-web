@@ -1,0 +1,24 @@
+<div class="app-form">
+  <div class="app-form__wrapper app-wrapper">
+    <h3 class="app-form__header">
+      {{ 'QUESTION.FORM.HEADER' | transloco }}
+    </h3>
+    <form (ngSubmit)="create()"
+          [formGroup]="formGroup"
+          class="app-form__content">
+      <app-form-field class="app-form__form-field">
+        <input appInput
+               formControlName="title"
+               id="title"
+               type="text"
+               placeholder=" "
+               class="app-form__field">
+        <app-label [inputId]="'title'">
+          {{ 'QUESTION.FORM.TITLE' | transloco }}
+        </app-label>
+      </app-form-field>
+
+      <button type="submit" class="app-button">Dodaj</button>
+    </form>
+  </div>
+</div>

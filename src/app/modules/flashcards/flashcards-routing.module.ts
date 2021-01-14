@@ -1,23 +1,33 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { OnlyForLoggedInGuard } from '../auth/guards/only-for-logged-in.guard';
 import { CategoriesComponent } from './components/categories/categories.component';
-import { QuestionsComponent } from './components/questions/questions.component';
+import { CategoryFormComponent } from './components/category-form/category-form.component';
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { CategoriesResolve } from './resolvers/categories.resolve';
 
 const routes: Routes = [
   {
     path: '',
-    component: CategoriesComponent
+    component: CategoriesComponent,
+    resolve: {
+      Category: CategoriesResolve
+    }
   },
   {
     path: ':category',
-    component: QuestionsComponent
+    component: QuestionsComponent,
   },
   {
     path: ':category/:question',
     component: QuestionComponent
+  },
+  {
+    path: 'category/form/create',
+    component: CategoryFormComponent,
+    canActivate: [OnlyForLoggedInGuard]
   },
   {
     path: 'questions/form/create',

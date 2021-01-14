@@ -12,6 +12,7 @@
     "LOG_IN": "Zaloguj się",
     "CATEGORY_LIST": "Lista Kategorii",
     "CREATE_QUESTIONS": "Dodaj zestaw",
+    "CREATE_CATEGORY": "Dodaj kategorię",
     "LOG_OUT": "Wyloguj"
   },
   "AUTH": {

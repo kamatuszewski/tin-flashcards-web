@@ -16,6 +16,11 @@ export const navElementsConfig: INavElementConfig[] = [
     redirectTo: ['flashcards', 'questions', 'form', 'create'],
     visibleType: ETypeVisible.LOGGED_IN
   },
+  {
+    label: 'CREATE_CATEGORY',
+    redirectTo: ['flashcards', 'category', 'form', 'create'],
+    visibleType: ETypeVisible.LOGGED_IN
+  },
 
 
 

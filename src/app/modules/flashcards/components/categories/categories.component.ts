@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ICategoryBasic } from '../../interfaces/category-basic.interface';
-import { categoriesMock } from '../../mocks/category.mock';
+import { Observable } from 'rxjs';
+import { ICategoryResponse } from '../../interfaces/category.interface';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-categories',
@@ -9,14 +10,14 @@ import { categoriesMock } from '../../mocks/category.mock';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  public categories: ICategoryBasic[] = categoriesMock;
-
-  constructor(private router: Router) { }
+  public categories: Observable<ICategoryResponse[]> = this.categoryService.selectItems();
+  constructor(private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
 
   public selectCategory = (item: number): void => {
+    console.log(item)
     this.router.navigate(['flashcards', item]).then();
   }
 }
