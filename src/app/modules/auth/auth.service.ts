@@ -20,7 +20,7 @@ import { IUserLoginData } from './interfaces/user-login-data.interface';
 export class AuthService {
   private static readonly ACCESS_TOKEN: string = 'tin_access_token';
 
-  public static accessTokenExists(accessToken: IToken): boolean {
+  public static accessTokenExists(accessToken?: IToken): boolean {
     return !!accessToken?.token || !!localStorage.getItem(AuthService.ACCESS_TOKEN);
   }
 
@@ -43,6 +43,9 @@ export class AuthService {
   private auth: string = environment.auth;
 
   constructor(private http: HttpClient, private router: Router) {
+    if (!this.getToken() && !!AuthService.accessTokenExists()) {
+      this.dispatchToken({token: localStorage.getItem(AuthService.ACCESS_TOKEN)});
+    }
   }
 
   public getLoginData(): IProfileResponse {
@@ -55,7 +58,7 @@ export class AuthService {
     return this.http.get<IProfileResponse>(url, {headers}).pipe(tap((profile: IProfileResponse) => this.dispatchLoginData(profile)));
   }
 
-  public getToken(): IToken {
+  public getToken(): IToken | null {
     return this.$tokenSubject.getValue();
   }
 
