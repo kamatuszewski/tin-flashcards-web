@@ -1,4 +1,7 @@
+@import "src/resources/variables";
+
 .app-question-item {
+  box-shadow: 0 0 10px $app-card-shadow-color;
   margin: 30px auto 0;
   max-width: 600px;
 

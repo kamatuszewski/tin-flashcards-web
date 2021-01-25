@@ -20,6 +20,7 @@ import { QuestionsFormComponent } from './components/questions-form/questions-fo
 import { QuestionsComponent } from './components/questions/questions.component';
 import { StatusComponent } from './components/status/status.component';
 import { FlashcardsRoutingModule } from './flashcards-routing.module';
+import { AnswerComponent } from './components/questions-form/components/answer/answer.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FlashcardsRoutingModule } from './flashcards-routing.module';
     QuestionsFormComponent,
     QuestionItemComponent,
     CategoryFormComponent,
+    AnswerComponent,
   ],
   imports: [
     CommonModule,

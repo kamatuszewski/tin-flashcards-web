@@ -55,5 +55,6 @@
         <app-question-item *ngFor="let field of formArray?.controls" [parentGroup]="field"></app-question-item>
       </div>
     </form>
+    {{ formGroup.value | json }}
   </div>
 </div>

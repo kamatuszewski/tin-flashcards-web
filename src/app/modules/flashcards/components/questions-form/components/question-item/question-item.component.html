@@ -1,12 +1,17 @@
-<div class="app-question-item app-card"
-     [formGroup]="parentGroup">
-  <div class="app-question-item__content">
+<div class="app-question-item"
+     xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="app-question-item__content" [formGroup]="parentGroup">
 
-  </div>
-  <div class="app-question-item__form" style="display: none">
+
+  <div class="app-question-item__form">
     <app-form-field>
       <input type="text" formControlName="title" id="title" placeholder=" ">
       <app-label [inputId]="'title'">Tytuł</app-label>
     </app-form-field>
   </div>
+  <ng-container [formArrayName]="'answers'" *ngFor="let answer of answers, let index = index">
+    <div>{{ index }}</div>
+  </ng-container>
+  </div>
+  <button class="app-button app-button--circle" type="button" (click)="addAnswer()">+</button>
 </div>

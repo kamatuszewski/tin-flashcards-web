@@ -45,8 +45,6 @@ export class QuestionsFormComponent implements OnInit, OnDestroy {
     return this.formBuilder.group({
       id: this.formBuilder.control(null),
       title: this.formBuilder.control(null),
-      type: this.formBuilder.control(null),
-      answers: this.formBuilder.array([])
     })
   }
 
