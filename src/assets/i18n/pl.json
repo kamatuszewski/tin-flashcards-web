@@ -62,10 +62,13 @@
     },
     "FORM": {
       "HEADER": "Nowy zestaw",
-      "title": "Tytuł",
-      "description": "Opis",
+      "TITLE": "Tytuł",
+      "DESCRIPTION": "Opis",
       "ADD": "Dodaj",
       "QUESTIONS": "Pytania"
     }
+  },
+  "ERRORS": {
+    "CATEGORY_ALREADY_EXISTS": "Kategoria o takiej nazwie już istnieje"
   }
 }

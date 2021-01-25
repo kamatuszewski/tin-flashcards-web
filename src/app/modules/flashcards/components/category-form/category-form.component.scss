@@ -1,0 +1,11 @@
+.app-category-form {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    max-width: 100px;
+    margin: auto;
+  }
+}
