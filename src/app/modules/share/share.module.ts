@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule } from '@ngneat/transloco';
 import { SelectComponent } from './components/select/select.component';
+import { ToastrComponent } from './components/toastr/toastr.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SelectComponent } from './components/select/select.component';
     InputDirective,
     AlertComponent,
     SearchComponent,
-    SelectComponent
+    SelectComponent,
+    ToastrComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { SelectComponent } from './components/select/select.component';
     InputDirective,
     AlertComponent,
     SearchComponent,
-    SelectComponent
+    SelectComponent,
+    ToastrComponent
   ]
 })
 export class ShareModule {}

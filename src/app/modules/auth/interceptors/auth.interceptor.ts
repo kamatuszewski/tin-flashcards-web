@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { OnDestroy } from '@angular/core';
-import { Observable, Subject, throwError } from 'rxjs';
+import { throwError, Observable, Subject } from 'rxjs';
 import { catchError, takeUntil } from 'rxjs/operators';
 import { CoreService } from '../../core/core.service';
 import { AuthService } from '../auth.service';

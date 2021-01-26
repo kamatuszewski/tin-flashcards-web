@@ -11,10 +11,18 @@
 
   &__content {
     width: 100%;
+    position: relative;
     display: block;
     flex-grow: 1;
     flex-basis: auto;
     background-color: $app-global-bg-color;
+  }
+
+  &__toastr {
+    position: fixed;
+    bottom: 5vh;
+    right: 0;
+    z-index: 1000;
   }
 }
 

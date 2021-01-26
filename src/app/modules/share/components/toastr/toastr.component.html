@@ -1,0 +1,10 @@
+<div *ngIf="toastr$ | async as toastr"
+     class="app-toastr"
+     [class.app-toastr--success]="toastr.type === EToastr.SUCCESS"
+     [class.app-toastr--warning]="toastr.type === EToastr.WARNING"
+     [class.app-toastr--error]="toastr.type === EToastr.ERROR">
+  <div class="app-toastr__content">
+    <button class="app-toastr__close" (click)="close()"></button>
+    <div class="app-toastr__text">{{ toastr.text }}</div>
+  </div>
+</div>

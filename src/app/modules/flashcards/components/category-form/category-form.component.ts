@@ -6,6 +6,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EAlert } from '../../../share/enums/alert.enum';
 import { IAlert } from '../../../share/interfaces/alert.interface';
+import { ToastrService } from '../../../share/services/toastr.service';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { CategoryService } from '../../services/category.service';
   styleUrls: ['./category-form.component.scss']
 })
 export class CategoryFormComponent implements OnInit, OnDestroy {
-  public alert$: BehaviorSubject<IAlert | void> = new BehaviorSubject<IAlert | null>(null);
+  public alert$: BehaviorSubject<IAlert | null> = new BehaviorSubject<IAlert | null>(null);
   public formGroup: FormGroup;
 
   private onDestroy$ = new Subject<void>();
@@ -22,6 +23,7 @@ export class CategoryFormComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
+    private toastrService: ToastrService,
     private transloco: TranslocoService) {
     this.initFormGroup();
   }
@@ -31,7 +33,10 @@ export class CategoryFormComponent implements OnInit, OnDestroy {
       this.categoryService.createCategory(this.formGroup.value)
         .pipe(takeUntil(this.onDestroy$))
         .subscribe(
-          () => console.log(),
+          () => {
+            this.toastrService.successToastr('Udalo sie');
+            this.dispatchAlert(null);
+          },
           (error: HttpErrorResponse) => {
             const badRequest = 400;
             if (error.status === badRequest) {
@@ -42,7 +47,11 @@ export class CategoryFormComponent implements OnInit, OnDestroy {
     }
   }
 
-  public dispatchAlert(status: EAlert, text: string): void {
+  public dispatchAlert(status?: EAlert, text?: string): void {
+    if (!status) {
+      this.alert$.next(null);
+      return;
+    }
     this.alert$.next({
       text: this.transloco.translate(text),
       type: status

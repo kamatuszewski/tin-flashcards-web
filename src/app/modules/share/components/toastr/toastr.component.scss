@@ -1,0 +1,77 @@
+@import "src/resources/variables";
+
+.app-toastr {
+  min-width: 150px;
+  max-width: 300px;
+  min-height: 50px;
+  opacity: 0.8;
+  border-radius: 5px;
+  box-shadow: -2px 1px 9px $app-white-color;
+
+  &--success {
+    background-color: $app-toaster-success-main-color;
+  }
+
+  &--warning {
+    background-color: $app-toaster-warn-main-color;
+  }
+
+  &--error {
+    background-color: $app-toaster-alert-main-color;
+  }
+
+  &__content {
+    position: relative;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__close {
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url("/assets/images/close.svg");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: unset;
+  }
+
+  &__text {
+    color: $app-white-color;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 22px;
+
+
+    &:before {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-size: 30px 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+    }
+  }
+
+  &--success &__text:before {
+    background-image: url("/assets/images/check.svg");
+  }
+
+  &--warning &__text:before {
+    background-image: url("/assets/images/warning.svg");
+  }
+
+  &--error &__text:before {
+    background-image: url("/assets/images/error.svg");
+  }
+}
