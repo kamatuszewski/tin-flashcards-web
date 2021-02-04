@@ -11,7 +11,7 @@ import { ToastrService } from '../../services/toastr.service';
 })
 export class ToastrComponent implements OnInit {
   public EToastr: typeof EToastr = EToastr;
-  private toastr$: Observable<IToastr | null>;
+  public toastr$: Observable<IToastr | null>;
 
   constructor(private toastrService: ToastrService) {}
 

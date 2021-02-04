@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { of, BehaviorSubject, Observable } from 'rxjs';
 import { mergeMap, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { ToastrService } from '../share/services/toastr.service';
 import { IAuthorizationHeader } from './interfaces/authorization-header.interface';
 import { ILoginRequest } from './interfaces/login-request.interface';
 import { ILoginResponse } from './interfaces/login-response.interface';
@@ -26,7 +28,7 @@ export class AuthService {
 
   public static getAuthorizationHeaderObject(authHeader: IToken | null): IAuthorizationHeader {
     return {
-      Authorization:  this.stringifyAuthorizationHeader(authHeader)
+      Authorization: this.stringifyAuthorizationHeader(authHeader)
     }
   }
 
@@ -42,7 +44,11 @@ export class AuthService {
   private $userLoginDataSubject = new BehaviorSubject<IUserLoginData | null>(null);
   private auth: string = environment.auth;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private translocoService: TranslocoService,
+    private toastrService: ToastrService) {
     if (!this.getToken() && !!AuthService.accessTokenExists()) {
       this.dispatchToken({token: localStorage.getItem(AuthService.ACCESS_TOKEN)});
     }
@@ -77,10 +83,11 @@ export class AuthService {
   }
 
   public logout(): void {
-    const removeToken = localStorage.removeItem(AuthService.ACCESS_TOKEN);
+    localStorage.removeItem(AuthService.ACCESS_TOKEN);
     this.dispatchToken(null, false)
     if (!localStorage.getItem(AuthService.ACCESS_TOKEN)) {
       this.router.navigate(['auth', 'log-in']).then();
+      this.toastrService.successToastr(this.translocoService.translate('AUTH.LOG_OUT.SUCCESS'))
     }
   }
 

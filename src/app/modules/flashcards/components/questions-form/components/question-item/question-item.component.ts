@@ -8,6 +8,7 @@ import { AbstractControl, FormArray, FormBuilder, FormGroup, Validators } from '
 })
 export class QuestionItemComponent implements OnInit {
   public answers: AbstractControl[] = [];
+  public formArray: FormArray;
   @Input() public parentGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -15,14 +16,17 @@ export class QuestionItemComponent implements OnInit {
   }
 
   public addAnswer(): void {
-    this.answers.push(this.formBuilder.group({
+    this.formArray.push(this.formBuilder.group({
       contents: this.formBuilder.control(null, Validators.required),
       is_correct: this.formBuilder.control(false)
     }))
   }
 
+  public initFormArray(): void {
+    this.formArray = this.parentGroup.get('answers') as FormArray;
+  }
+
   ngOnInit(): void {
     this.parentGroup.addControl('answers', this.formBuilder.array(this.answers));
-    this.addAnswer();
   }
 }

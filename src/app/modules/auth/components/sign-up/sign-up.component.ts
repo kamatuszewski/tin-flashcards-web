@@ -7,6 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EAlert } from '../../../share/enums/alert.enum';
 import { IAlert } from '../../../share/interfaces/alert.interface';
+import { ToastrService } from '../../../share/services/toastr.service';
 import { AuthService } from '../../auth.service';
 import { signupContent } from '../../config/auth.config';
 import { IAuthContent } from '../../interfaces/auth-content.interface';
@@ -52,6 +53,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private authService: AuthService,
+              private toastrService: ToastrService,
               private translocoService: TranslocoService) {
   }
 
@@ -76,6 +78,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.onDestroy$))
         .subscribe(
           () => {
+            this.toastrService.successToastr(this.translocoService.translate('AUTH.SIGN_UP.SUCCESS'))
             this.alert$.next(null);
             this.router.navigate(['auth', 'log-in'])
           },

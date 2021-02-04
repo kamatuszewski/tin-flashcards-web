@@ -7,6 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EAlert } from '../../../share/enums/alert.enum';
 import { IAlert } from '../../../share/interfaces/alert.interface';
+import { ToastrService } from '../../../share/services/toastr.service';
 import { AuthService } from '../../auth.service';
 import { loginContent } from '../../config/auth.config';
 import { IAuthContent } from '../../interfaces/auth-content.interface';
@@ -48,6 +49,7 @@ export class LogInComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private translocoService: TranslocoService,
     private authService: AuthService,
+    private toastrService: ToastrService,
     private router: Router) {
   }
 
@@ -71,6 +73,7 @@ export class LogInComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.onDestroy$))
         .subscribe(
           () => {
+            this.toastrService.successToastr(this.translocoService.translate('AUTH.LOG_IN.SUCCESS'))
             this.alert$.next(null);
             this.router.navigate(['flashcards']).then();
           },

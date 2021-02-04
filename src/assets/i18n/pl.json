@@ -26,7 +26,8 @@
       "DESCRIPTION": "Zaloguj się do aplikacji by móc tworzyć własne zestawy pytań, a także by monitorować swój postęp w nauce.",
       "PASSWORD": "Hasło",
       "SUBMIT": "Zaloguj",
-      "REMIND_PASSWORD": "Przypomnij hasło"
+      "REMIND_PASSWORD": "Przypomnij hasło",
+      "SUCCESS": "Zalogowano"
     },
     "SIGN_UP": {
       "HEADER": "Zarejestruj się",
@@ -35,7 +36,11 @@
       "PASSWORD": "Hasło",
       "REPEAT_PASSWORD": "Powtórz hasło",
       "EMAIL": "Email",
-      "SUBMIT": "Zarejestruj"
+      "SUBMIT": "Zarejestruj",
+      "SUCCESS": "Konto zostało utworzone"
+    },
+    "LOG_OUT": {
+      "SUCCESS": "Wylogowano"
     },
     "REMIND_PASSWORD": {
       "HEADER": "Przypomnij hasło",
