@@ -1,17 +1,31 @@
-<div class="app-question-item"
-     xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<div class="app-question-item">
   <div class="app-question-item__content" [formGroup]="parentGroup">
-
-
-  <div class="app-question-item__form">
-    <app-form-field>
-      <input type="text" formControlName="title" id="title" placeholder=" ">
-      <app-label [inputId]="'title'">Tytuł</app-label>
-    </app-form-field>
+    <div class="app-question-item__form">
+      <app-form-field>
+        <input type="text" appInput formControlName="title" id="title" placeholder=" ">
+        <app-label [inputId]="'title'">{{ 'QUESTION.FORM.ITEM.TITLE' | transloco }}</app-label>
+      </app-form-field>
+    </div>
+    <app-error *ngIf="formArray.hasError('minLengthArray') && (formArray.dirty || formArray.touched)">{{ 'QUESTION.FORM.ERRORS.ANSWER_MIN_LENGTH_ARRAY' | transloco }}</app-error>
+    <div [formArrayName]="'answers'"
+         class="app-question-item__answers">
+      <div *ngFor="let answer of formArray.controls, let index = index"
+           [formGroupName]="index"
+           class="app-question-item__answer">
+        <app-form-field>
+          <input type="text" appInput formControlName="contents" id="contents" placeholder=" ">
+          <app-label [inputId]="'contents'">{{ 'QUESTION.FORM.ITEM.ANSWER' | transloco }}</app-label>
+        </app-form-field>
+        <div class="app-question-item__correct">
+          <input type="checkbox" formControlName="is_correct">
+          <div class="app-question-item__correct-icon"></div>
+        </div>
+        <button class="app-question-item__remove" (click)="removeAnswer(index)"></button>
+      </div>
+    </div>
   </div>
-  <ng-container [formArrayName]="'answers'" *ngFor="let answer of answers, let index = index">
-    <div>{{ index }}</div>
-  </ng-container>
+  <div class="app-question-item__actions">
+    <button class="app-button" type="button" (click)="addAnswer()">{{ 'QUESTION.FORM.ITEM.ADD' | transloco }}</button>
+    <button class="app-button app-button--remove" type="button" (click)="removeQuestion()">{{ 'QUESTION.FORM.ITEM.REMOVE' | transloco }}</button>
   </div>
-  <button class="app-button app-button--circle" type="button" (click)="addAnswer()">+</button>
 </div>

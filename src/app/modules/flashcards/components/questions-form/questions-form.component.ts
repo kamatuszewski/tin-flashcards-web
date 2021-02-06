@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { minLengthArray } from '../../../core/functions/validators.function';
 import { ICategoryBasic } from '../../interfaces/category-basic.interface';
 import { ICreateQuestionsRequest } from '../../interfaces/create-questions-request.interface';
 import { QuestionsService } from '../../services/questions.service';
@@ -15,6 +16,7 @@ export class QuestionsFormComponent implements OnInit, OnDestroy {
   public categoryList: Observable<ICategoryBasic[]> = this.questionsService.selectFormData();
   public formArray: FormArray;
   public formGroup: FormGroup;
+  public listenChanged$ = new Subject<void>();
   private onDestroy$ = new Subject<void>();
 
   constructor(private formBuilder: FormBuilder, private questionsService: QuestionsService) {}
@@ -24,8 +26,10 @@ export class QuestionsFormComponent implements OnInit, OnDestroy {
   }
 
   public create(): void {
+    this.allMarkAsTouched();
     if (this.formGroup.valid) {
-      const payload: ICreateQuestionsRequest = this.formGroup.value;
+      const payload: ICreateQuestionsRequest = this.formGroup.getRawValue();
+      console.log(payload);
       this.questionsService.createQuestions(payload).pipe(takeUntil(this.onDestroy$)).subscribe();
     }
   }
@@ -41,10 +45,21 @@ export class QuestionsFormComponent implements OnInit, OnDestroy {
     this.questionsService.getAndDispatchFormData();
   }
 
+  public removeQuestion($event: number): void {
+    this.formArray.removeAt($event);
+  }
+
+  private allMarkAsTouched(): void {
+    Object.values(this.formGroup.controls).forEach((control: AbstractControl) => {
+      control.markAllAsTouched();
+      this.listenChanged$.next();
+    })
+  }
+
   private getEmptyQuestion(): FormGroup {
     return this.formBuilder.group({
       id: this.formBuilder.control(null),
-      title: this.formBuilder.control(null),
+      title: this.formBuilder.control(null, Validators.required),
     })
   }
 
@@ -53,11 +68,12 @@ export class QuestionsFormComponent implements OnInit, OnDestroy {
       title: this.formBuilder.control(null, Validators.required),
       description: this.formBuilder.control(null),
       categoryId: this.formBuilder.control(null, Validators.required),
-      questions: this.formBuilder.array([])
+      questions: this.formBuilder.array([], minLengthArray(2))
     })
   }
 
   private initFormArray(): void {
     this.formArray = this.formGroup.get('questions') as FormArray;
   }
+
 }

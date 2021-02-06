@@ -70,7 +70,19 @@
       "TITLE": "Tytuł",
       "DESCRIPTION": "Opis",
       "ADD": "Dodaj",
-      "QUESTIONS": "Pytania"
+      "CATEGORY": "Kategoria",
+      "QUESTIONS": "Pytania",
+      "SUBMIT": "Zapisz",
+      "ITEM": {
+        "TITLE": "Pytanie",
+        "ANSWER": "Odpowiedź",
+        "ADD": "Dodaj",
+        "REMOVE": "Usuń"
+      },
+      "ERRORS": {
+        "ANSWER_MIN_LENGTH_ARRAY": "Pytanie powinno zawierać minimum 2 odpowiedzi",
+        "QUESTION_MIN_LENGTH_ARRAY": "Fiszka powinna zawierać minimum 2 pytania"
+      }
     }
   },
   "ERRORS": {

@@ -39,7 +39,7 @@
         color: $app-form-field-error-color;
       }
 
-      &--error input, &--error textarea {
+      &--error input, &--error textarea, &--error select {
         &, &:focus, &:active {
           border-color: $app-form-field-error-color;
         }
@@ -66,7 +66,7 @@
         transition: inherit;
       }
 
-      input:focus + app-label, input:not(:placeholder-shown) + app-label, textarea:focus + app-label, textarea:not(:placeholder-shown) + app-label {
+      input:focus + app-label, input:not(:placeholder-shown) + app-label, textarea:focus + app-label, textarea:not(:placeholder-shown) + app-label, select + app-label {
         transition: top 200ms ease-in, font-size 200ms ease-in, letter-spacing 200ms ease-in;
         top: 0;
         font-size: 12px;
