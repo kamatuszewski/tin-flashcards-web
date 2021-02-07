@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { OnlyForNotLoggedInGuard } from './modules/auth/guards/only-for-not-logged-in.guard';
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'flashcards',
-    loadChildren: () => import('./modules/flashcards/flashcards.module').then(m => m.FlashcardsModule)
+    loadChildren: () => import('./modules/flashcards/flashcards.module').then(m => m.FlashcardsModule),
   },
   {
     path: '',

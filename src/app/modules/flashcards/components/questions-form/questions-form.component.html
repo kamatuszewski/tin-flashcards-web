@@ -1,5 +1,6 @@
 <div class="app-form">
   <div class="app-form__wrapper app-wrapper">
+    <app-alert [status]="alert$ | async"></app-alert>
     <h3 class="app-form__header">
       {{ 'QUESTION.FORM.HEADER' | transloco }}
     </h3>
@@ -43,26 +44,26 @@
         </app-label>
       </app-form-field>
 
-      <div class="app-form__questions">
-        <div class="app-form__questions-content">
-          <h4 class="app-form__questions-title">{{ 'QUESTION.FORM.QUESTIONS' | transloco }}</h4>
-          <button type="button"
-                  (click)="addQuestion()"
-                  class="app-button app-button--circle app-button--small-padding">
-            <img src="assets/images/add.svg" class="app-button__icon">
-          </button>
-        </div>
-      </div>
+<!--      <div class="app-form__questions">-->
+<!--        <div class="app-form__questions-content">-->
+<!--          <h4 class="app-form__questions-title">{{ 'QUESTION.FORM.QUESTIONS' | transloco }}</h4>-->
+<!--          <button type="button"-->
+<!--                  (click)="addQuestion()"-->
+<!--                  class="app-button app-button&#45;&#45;circle app-button&#45;&#45;small-padding">-->
+<!--            <img src="assets/images/add.svg" class="app-button__icon">-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <app-error class="app-form__errors" *ngIf="formArray.hasError('minLengthArray') && (formArray.dirty || formArray.touched)">{{ 'QUESTION.FORM.ERRORS.QUESTION_MIN_LENGTH_ARRAY' | transloco }}</app-error>
+<!--      <app-error class="app-form__errors" *ngIf="formArray.hasError('minLengthArray') && (formArray.dirty || formArray.touched)">{{ 'QUESTION.FORM.ERRORS.QUESTION_MIN_LENGTH_ARRAY' | transloco }}</app-error>-->
 
-      <div [formArrayName]="'questions'">
-        <app-question-item *ngFor="let field of formArray?.controls; let index = index"
-                           [formGroupName]="index"
-                           [parentGroup]="field"
-                           (remove)="removeQuestion($event)"
-                           [parentListenChanged]="listenChanged$"></app-question-item>
-      </div>
+<!--      <div [formArrayName]="'questions'">-->
+<!--        <app-question-item *ngFor="let field of formArray?.controls; let index = index"-->
+<!--                           [formGroupName]="index"-->
+<!--                           [parentGroup]="field"-->
+<!--                           (remove)="removeQuestion($event)"-->
+<!--                           [parentListenChanged]="listenChanged$"></app-question-item>-->
+<!--      </div>-->
 
       <div class="app-form__actions">
         <button class="app-button" type="submit">{{ 'QUESTION.FORM.SUBMIT' | transloco }}</button>

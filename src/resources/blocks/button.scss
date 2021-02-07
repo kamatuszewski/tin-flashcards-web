@@ -24,6 +24,12 @@
       text-shadow: 0 1px 0 $app-button-remove-shadow-text-color;
     }
 
+    &--edit {
+      background-color: orange;
+      border: 1px solid orange;
+      text-shadow: 0 1px 0 orange;
+    }
+
     &--circle {
       border-radius: 50%;
     }
@@ -38,6 +44,12 @@
 
     &--remove:hover {
       background-color: $app-button-remove-hover-color;
+      opacity: .5;
+
+    }
+
+    &--edit:hover {
+      background-color: orange;
       opacity: .5;
 
     }

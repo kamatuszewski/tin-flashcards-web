@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
-import { of, BehaviorSubject, Observable } from 'rxjs';
-import { mergeMap, tap } from 'rxjs/operators';
+import { of, BehaviorSubject, Observable, Subject } from 'rxjs';
+import { map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { ETypeRole } from '../core/enums/type-role.enum';
 import { ToastrService } from '../share/services/toastr.service';
 import { IAuthorizationHeader } from './interfaces/authorization-header.interface';
 import { ILoginRequest } from './interfaces/login-request.interface';
@@ -19,7 +20,7 @@ import { IUserLoginData } from './interfaces/user-login-data.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
   private static readonly ACCESS_TOKEN: string = 'tin_access_token';
 
   public static accessTokenExists(accessToken?: IToken): boolean {
@@ -43,18 +44,17 @@ export class AuthService {
   private $tokenSubject = new BehaviorSubject<IToken | null>(null);
   private $userLoginDataSubject = new BehaviorSubject<IUserLoginData | null>(null);
   private auth: string = environment.auth;
+  private onDestroy$ = new Subject<void>();
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private translocoService: TranslocoService,
     private toastrService: ToastrService) {
-    if (!this.getToken() && !!AuthService.accessTokenExists()) {
-      this.dispatchToken({token: localStorage.getItem(AuthService.ACCESS_TOKEN)});
-    }
+    this.loadToken();
   }
 
-  public getLoginData(): IProfileResponse {
+  public getLoginData(): IProfileResponse | null {
     return this.$userLoginDataSubject.getValue();
   }
 
@@ -70,6 +70,14 @@ export class AuthService {
 
   public isAuthorized(): boolean {
     return !!AuthService.accessTokenExists(this.getToken())
+  }
+
+  public loadToken(): void {
+    if (!this.getToken() && !!AuthService.accessTokenExists()) {
+      const token= localStorage.getItem(AuthService.ACCESS_TOKEN);
+      this.dispatchToken({token});
+      this.getProfile({access_token: token});
+    }
   }
 
   public login(payload: ILoginRequest): Observable<ILoginResponse> {
@@ -91,6 +99,11 @@ export class AuthService {
     }
   }
 
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
+  }
+
   public selectLoginData(): Observable<IProfileResponse> {
     return this.$userLoginDataSubject.asObservable();
   }
@@ -105,7 +118,6 @@ export class AuthService {
   }
 
   private dispatchLoginData(data: IProfileResponse): void {
-    console.log(data);
     this.$userLoginDataSubject.next({...data});
   }
 

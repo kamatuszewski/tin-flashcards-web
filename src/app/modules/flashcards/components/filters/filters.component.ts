@@ -13,6 +13,5 @@ export class FiltersComponent implements OnInit {
   }
 
   public search = (value: string): void => {
-    console.log(value);
   }
 }

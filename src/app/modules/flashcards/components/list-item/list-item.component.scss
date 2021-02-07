@@ -37,4 +37,10 @@
     padding-top: 10px;
     user-select: none;
   }
+
+  &__actions {
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+  }
 }

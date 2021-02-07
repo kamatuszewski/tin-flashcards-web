@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor, OnDestroy {
         setHeaders: {...AuthService.getAuthorizationHeaderObject(this.sessionToken)}
       })
     }
-    console.log(request)
+
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {

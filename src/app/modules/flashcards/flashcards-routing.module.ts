@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { OnlyForLoggedInGuard } from '../auth/guards/only-for-logged-in.guard';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
+import { CategoryManageComponent } from './components/category-manage/category-manage.component';
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionsFormComponent } from './components/questions-form/questions-form.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { CategoriesResolve } from './resolvers/categories.resolve';
+import { CategoryManageResolve } from './resolvers/category-manage.resolve';
 import { QuestionsResolve } from './resolvers/questions.resolve';
 
 const routes: Routes = [
@@ -22,6 +24,15 @@ const routes: Routes = [
     component: QuestionsComponent,
     resolve: {
       Questions: QuestionsResolve
+    }
+  },
+
+  {
+    path: 'category/manage',
+    component: CategoryManageComponent,
+    canActivate: [OnlyForLoggedInGuard],
+    resolve: {
+      category: CategoryManageResolve
     }
   },
   {

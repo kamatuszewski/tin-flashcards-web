@@ -1,25 +1,34 @@
+import { ESpecialActions } from '../enums/special-actions.enum';
+import { ETypeRole } from '../enums/type-role.enum';
 import { ETypeVisible } from '../enums/type-visible.enum';
 import { INavElementConfig } from '../interfaces/nav-element-config.interface';
-import { ESpecialActions } from '../enums/special-actions.enum';
 
 export const navElementsConfig: INavElementConfig[] = [
   /**
    * for not authorized
    */
-  , {
+  {
     label: 'CATEGORY_LIST',
     redirectTo: ['flashcards'],
-    visibleType: ETypeVisible.EVERY,
+    visibleType: ETypeVisible.EVERY
   },
   {
     label: 'CREATE_QUESTIONS',
     redirectTo: ['flashcards', 'questions', 'form', 'create'],
-    visibleType: ETypeVisible.LOGGED_IN
+    visibleType: ETypeVisible.LOGGED_IN,
+    visibleFor: ETypeRole.USER,
   },
   {
     label: 'CREATE_CATEGORY',
     redirectTo: ['flashcards', 'category', 'form', 'create'],
-    visibleType: ETypeVisible.LOGGED_IN
+    visibleType: ETypeVisible.LOGGED_IN,
+    visibleFor: ETypeRole.USER,
+  },
+  {
+    label: 'CATEGORY_MANAGE',
+    redirectTo: ['flashcards', 'category', 'manage'],
+    visibleType: ETypeVisible.LOGGED_IN,
+    visibleFor: ETypeRole.ADMIN,
   },
 
 

@@ -6,6 +6,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { ShareModule } from '../share/share.module';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
+import { CategoryManageComponent } from './components/category-manage/category-manage.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListComponent } from './components/list/list.component';
@@ -39,6 +40,7 @@ import { FlashcardsRoutingModule } from './flashcards-routing.module';
     QuestionsFormComponent,
     QuestionItemComponent,
     CategoryFormComponent,
+    CategoryManageComponent,
   ],
   imports: [
     CommonModule,

@@ -37,13 +37,10 @@ export class QuestionComponent implements OnInit, OnDestroy {
 
   public setAnswer(isCorrect: boolean): void {
     this.isCorrect = isCorrect;
-    console.log(isCorrect);
   }
 
   private sendAnswers(): void {
-    console.log('Poprawnie?: ', this.isCorrect);
     this.flashcards.sendAnswersOnQuestion({}).subscribe(() => {
-      console.log('sadasd');
     });
   }
 }

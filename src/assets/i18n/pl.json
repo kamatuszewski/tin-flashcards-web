@@ -5,7 +5,9 @@
       "PRIVATE": "Prywatne",
       "IN_REVIEW": "W akceptacji"
     },
-    "SEARCH": "Szukaj"
+    "SEARCH": "Szukaj",
+    "CHANGE_STATUS": "Zmień status",
+    "REMOVE": "Usuń"
   },
   "NAVIGATION": {
     "SIGN_UP": "Zarejestruj się",
@@ -13,6 +15,8 @@
     "CATEGORY_LIST": "Lista Kategorii",
     "CREATE_QUESTIONS": "Dodaj zestaw",
     "CREATE_CATEGORY": "Dodaj kategorię",
+    "MY_FLASHCARDS": "Moje zestawy",
+    "CATEGORY_MANAGE": "Zarządzaj kategoriami",
     "LOG_OUT": "Wyloguj"
   },
   "AUTH": {
@@ -79,6 +83,9 @@
         "ADD": "Dodaj",
         "REMOVE": "Usuń"
       },
+      "TOASTR": {
+        "SUCCESS": "Dodano nowy zestaw"
+      },
       "ERRORS": {
         "ANSWER_MIN_LENGTH_ARRAY": "Pytanie powinno zawierać minimum 2 odpowiedzi",
         "QUESTION_MIN_LENGTH_ARRAY": "Fiszka powinna zawierać minimum 2 pytania"
@@ -86,6 +93,20 @@
     }
   },
   "ERRORS": {
-    "CATEGORY_ALREADY_EXISTS": "Kategoria o takiej nazwie już istnieje"
+    "CATEGORY_ALREADY_EXISTS": "Kategoria o takiej nazwie już istnieje",
+    "FLASHCARD_ALREADY_EXISTS": "Zestaw o takiej nazwie już istnieje",
+    "CATEGORY_NO_REMOVE": "Nie udało się usunąć kategori"
+  },
+  "CATEGORY": {
+    "REMOVE": {
+      "TOASTR": {
+        "SUCCESS": "Udało się usunąć kategorię"
+      }
+    },
+    "CHANGE_STATUS": {
+      "TOASTR": {
+        "SUCCESS": "Udało się zmienić status"
+      }
+    }
   }
 }

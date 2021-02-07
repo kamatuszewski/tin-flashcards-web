@@ -1,10 +1,14 @@
 <div class="app-list-item app-card"
      (click)="select()">
   <div class="app-list-item__status">
-    <app-status [data]="data.status"></app-status>
+    <app-status *ngIf="!!data?.status" [data]="data.status"></app-status>
   </div>
   <div class="app-list-item__content">
     <div class="app-list-item__title">{{ data.title }}</div>
     <div class="app-list-item__description">{{ data.description }}</div>
+  </div>
+  <div class="app-list-item__actions" *ngIf="!!options?.remove || !!options?.changeStatus">
+    <button class="app-button" (click)="action(eListItemActionType.CHANGE_STATUS, $event)">{{ 'COMMON.CHANGE_STATUS' | transloco }}</button>
+    <button class="app-button app-button--remove" (click)="action(eListItemActionType.REMOVE, $event)">{{ 'COMMON.REMOVE' | transloco }}</button>
   </div>
 </div>
